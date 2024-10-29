@@ -1,16 +1,23 @@
 class Meal {
-  final String id;
-  final String nom;
-  final String imageUrl;
-  final int calories;
-  final Map<String, double>
-      macronutriments; // ex : {'protéines': 25.0, 'glucides': 50.0, 'lipides': 10.0}
+  final String? id;
+  final String? name;
+  final String? imageUrl;
+  final String? type; // e.g., "Petit-déjeuner", "Déjeuner", etc.
+  final int? preparationTime; // en minutes
+  final int? calories;
+  final List<String>? ingredients;
+  final String? instructions;
+  final Map<String, double>? macronutriments;
 
   Meal({
-    required this.id,
-    required this.nom,
-    required this.imageUrl,
-    required this.calories,
-    required this.macronutriments,
+    this.id,
+    this.name,
+    this.imageUrl,
+    this.type,
+    this.preparationTime,
+    this.calories,
+    this.ingredients,
+    this.instructions,
+    this.macronutriments,
   });
 }

@@ -1,6 +1,8 @@
+// lib/main.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './providers/dashboard_provider.dart';
+import './providers/meal_provider.dart'; // Importez MealProvider
 import './screens/dashboard_screen.dart';
 
 void main() {
@@ -8,8 +10,10 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => DashboardProvider()),
+        ChangeNotifierProvider(
+            create: (_) => MealProvider()), // Ajoutez MealProvider ici
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: DashboardScreen(),
+      home: const DashboardScreen(),
     );
   }
 }

@@ -45,19 +45,20 @@ class DashboardProvider with ChangeNotifier {
     _recommandations = [
       Meal(
         id: 'm1',
-        nom: 'Salade de Quinoa',
-        imageUrl: 'https://example.com/quinoa.jpg',
+        name: 'Salade de Quinoa',
+        imageUrl: 'assets/images/Salade_de_Quinoa.png', // URL valide
         calories: 400,
         macronutriments: {'Protéines': 15.0, 'Glucides': 60.0, 'Lipides': 10.0},
       ),
       Meal(
         id: 'm2',
-        nom: 'Poulet Grillé',
-        imageUrl: 'https://example.com/poulet.jpg',
+        name: 'Poulet Grillé',
+        imageUrl: 'assets/images/Poulet_grille.png', // URL valide
         calories: 500,
         macronutriments: {'Protéines': 40.0, 'Glucides': 30.0, 'Lipides': 15.0},
       ),
     ];
+
     notifyListeners();
   }
 
