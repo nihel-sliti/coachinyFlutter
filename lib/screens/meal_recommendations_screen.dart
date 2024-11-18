@@ -11,6 +11,7 @@ class MealRecommendationsScreen extends StatelessWidget {
     final meals = mealProvider.meals;
 
     return Scaffold(
+      backgroundColor: const Color(0xFFEFF8FD),
       appBar: AppBar(
         title: Text('Recommandations de Repas'),
         actions: [

@@ -9,6 +9,7 @@ class MealDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFEFF8FD),
       appBar: AppBar(
         title: Text(meal.name ?? 'Détails du Repas'),
       ),
@@ -41,11 +42,19 @@ class MealDetailScreen extends StatelessWidget {
                     const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
+            // Affichage des ingrédients
             if (meal.ingredients != null && meal.ingredients!.isNotEmpty)
-              ...meal.ingredients!.map(
-                (ingredient) => ListTile(
-                  leading: const Icon(Icons.check),
-                  title: Text(ingredient),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  children: meal.ingredients!
+                      .map(
+                        (ingredient) => ListTile(
+                          leading: const Icon(Icons.check),
+                          title: Text(ingredient),
+                        ),
+                      )
+                      .toList(),
                 ),
               ),
             if (meal.ingredients == null || meal.ingredients!.isEmpty)
@@ -79,6 +88,7 @@ class MealDetailScreen extends StatelessWidget {
     );
   }
 
+  // Méthode pour afficher l'image du repas avec gestion des erreurs
   Widget _buildMealImage() {
     if (meal.imageUrl != null && meal.imageUrl!.isNotEmpty) {
       return Image.network(

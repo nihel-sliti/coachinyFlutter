@@ -49,6 +49,7 @@ class DashboardProvider with ChangeNotifier {
         imageUrl: 'assets/images/Salade_de_Quinoa.png', // URL valide
         calories: 400,
         macronutriments: {'Protéines': 15.0, 'Glucides': 60.0, 'Lipides': 10.0},
+        description: 'Mixed rice with meat and assorted vegetables.',
       ),
       Meal(
         id: 'm2',
@@ -56,6 +57,7 @@ class DashboardProvider with ChangeNotifier {
         imageUrl: 'assets/images/Poulet_grille.png', // URL valide
         calories: 500,
         macronutriments: {'Protéines': 40.0, 'Glucides': 30.0, 'Lipides': 15.0},
+        description: 'Mixed rice with meat and assorted vegetables.',
       ),
     ];
 

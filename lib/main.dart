@@ -1,4 +1,5 @@
 // lib/main.dart
+import 'package:coachiny/screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './providers/dashboard_provider.dart';
@@ -24,11 +25,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Application Repas Sains',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const DashboardScreen(),
+      home: const HomeScreen(),
     );
   }
 }

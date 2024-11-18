@@ -8,6 +8,7 @@ class Meal {
   final List<String>? ingredients;
   final String? instructions;
   final Map<String, double>? macronutriments;
+  final String? description;
 
   Meal({
     this.id,
@@ -19,5 +20,6 @@ class Meal {
     this.ingredients,
     this.instructions,
     this.macronutriments,
+    this.description,
   });
 }
