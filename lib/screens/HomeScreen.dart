@@ -1,6 +1,10 @@
+import 'package:coachiny/screens/OffersScreen.dart';
+import 'package:coachiny/screens/ProgramScreen.dart';
 import 'package:coachiny/screens/dashboard_screen.dart';
 import 'package:coachiny/screens/meal_detail_screen.dart';
 import 'package:coachiny/screens/meal_recommendations_screen.dart';
+import 'package:coachiny/screens/productScreen.dart';
+import 'package:coachiny/screens/statistic_screen.dart';
 import 'package:coachiny/widgets/progression_card.dart';
 import 'package:coachiny/widgets/statistics_card.dart';
 import 'package:flutter/material.dart';
@@ -66,19 +70,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     imageUrl:
                         'https://www.legalplace.fr/wp-content/uploads/2019/05/13.05-Contenu-Web-Devenir-coach-sportif-1.jpg',
                     label: 'Offer',
-                    destination: MealRecommendationsScreen(),
+                    destination: OffersScreen(),
                   ),
                   HorizontalItem(
                     imageUrl:
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFVzY_5ptqcdVAcy4kH2xqmS8uc1BdLa7Xqg&s',
                     label: 'Program',
-                    destination: MealRecommendationsScreen(),
+                    destination: ProgramScreen(),
                   ),
                   HorizontalItem(
                     imageUrl:
                         'https://www.nutrimove.fr/images/formation-produits-dietetiques-sportifs.jpg',
                     label: 'Product',
-                    destination: MealRecommendationsScreen(),
+                    destination: Productscreen(),
                   ),
                   HorizontalItem(
                     imageUrl:
@@ -92,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const StatisticsCard(
               score: 660,
               description: 'Your Calories Score is average',
+              targetScreen: StatisticsScreen(),
             ),
             const ProgressionCard(
               data: [200, 400, 800, 600, 300, 900],
@@ -101,10 +106,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: CustomBottomNavBar(
+      /*  bottomNavigationBar: CustomBottomNavBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-      ),
+      ),*/
     );
   }
 }

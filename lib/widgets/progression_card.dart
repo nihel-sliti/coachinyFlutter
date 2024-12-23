@@ -1,3 +1,4 @@
+import 'package:coachiny/screens/ProgressScreen.dart';
 import 'package:flutter/material.dart';
 
 class ProgressionCard extends StatelessWidget {
@@ -14,100 +15,112 @@ class ProgressionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      padding: const EdgeInsets.all(16.0),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 8,
+    return GestureDetector(
+      onTap: () {
+        // Navigate to another screen
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+                ProgressScreen(), // Replace with your target screen
           ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Title and Dropdown
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                'Progression',
-                style: TextStyle(
-                  fontSize: 24.0, // Larger font
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              DropdownButton<String>(
-                value: period,
-                items: const [
-                  DropdownMenuItem(value: 'Weekly', child: Text('Weekly')),
-                  DropdownMenuItem(value: 'Monthly', child: Text('Monthly')),
-                ],
-                onChanged: (value) {
-                  // Add logic here
-                },
-              ),
-            ],
-          ),
-          const SizedBox(height: 16.0),
-
-          // Bar Chart with Y and X Axes
-          SizedBox(
-            height: 200.0, // Increased chart height
-            child: Stack(
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 2,
+              blurRadius: 8,
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Title and Dropdown
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Grid and Axes
-                CustomPaint(
-                  size: Size(double.infinity, 200),
-                  painter: _AxisPainter(),
-                ),
-                // Bars and Days
-                Padding(
-                  padding: const EdgeInsets.only(left: 40.0, top: 10.0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: data.asMap().entries.map((entry) {
-                      int index = entry.key;
-                      int value = entry.value;
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          // Bar
-                          Container(
-                            width: 20.0,
-                            height: (value / 1000) * 150, // Scale height
-                            decoration: BoxDecoration(
-                              color: index % 2 == 0
-                                  ? const Color(0xFF40B491) // Solid green
-                                  : const Color(
-                                      0x8040B491), // Transparent green
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          const SizedBox(height: 4.0),
-                          // Day label
-                          Text(
-                            days[index],
-                            style: const TextStyle(
-                              fontSize: 12.0,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      );
-                    }).toList(),
+                const Text(
+                  'Progression',
+                  style: TextStyle(
+                    fontSize: 24.0, // Larger font
+                    fontWeight: FontWeight.bold,
                   ),
+                ),
+                DropdownButton<String>(
+                  value: period,
+                  items: const [
+                    DropdownMenuItem(value: 'Weekly', child: Text('Weekly')),
+                    DropdownMenuItem(value: 'Monthly', child: Text('Monthly')),
+                  ],
+                  onChanged: (value) {
+                    // Add logic here
+                  },
                 ),
               ],
             ),
-          ),
-        ],
+            const SizedBox(height: 16.0),
+
+            // Bar Chart with Y and X Axes
+            SizedBox(
+              height: 200.0, // Increased chart height
+              child: Stack(
+                children: [
+                  // Grid and Axes
+                  CustomPaint(
+                    size: Size(double.infinity, 200),
+                    painter: _AxisPainter(),
+                  ),
+                  // Bars and Days
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40.0, top: 10.0),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: data.asMap().entries.map((entry) {
+                        int index = entry.key;
+                        int value = entry.value;
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            // Bar
+                            Container(
+                              width: 20.0,
+                              height: (value / 1000) * 150, // Scale height
+                              decoration: BoxDecoration(
+                                color: index % 2 == 0
+                                    ? const Color(0xFF40B491) // Solid green
+                                    : const Color(
+                                        0x8040B491), // Transparent green
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                            const SizedBox(height: 4.0),
+                            // Day label
+                            Text(
+                              days[index],
+                              style: const TextStyle(
+                                fontSize: 12.0,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -155,4 +168,16 @@ class _AxisPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class AnotherScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Another Screen")),
+      body: Center(
+        child: Text("This is the target screen!"),
+      ),
+    );
+  }
 }

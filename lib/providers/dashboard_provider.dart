@@ -21,6 +21,8 @@ class DashboardProvider with ChangeNotifier {
       taille: 175.0,
       age: 40,
       sexe: 'Homme',
+      activityLevel: 'Hight',
+      goal: 'poids',
     );
     notifyListeners();
   }

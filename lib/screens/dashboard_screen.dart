@@ -1,3 +1,5 @@
+import 'package:coachiny/screens/FavoritesScreen.dart';
+import 'package:coachiny/screens/RecipesScreen.dart';
 import 'package:coachiny/screens/meal_recommendations_screen.dart';
 import 'package:coachiny/widgets/TodayRecipeWidget.dart';
 import 'package:coachiny/widgets/message_card.dart';
@@ -53,6 +55,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
             ),
           ),
+          IconButton(
+            icon: Icon(Icons.favorite_border), // Icône pour les favoris
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      FavoritesScreen(), // Redirection vers la page des favoris
+                ),
+              );
+            },
+          ),
         ],
       ),
       body: _isLoading
@@ -92,8 +106,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    MealRecommendationsScreen()),
+                                builder: (context) => RecipesScreen()),
+                            //MealRecommendationsScreen()),
                           );
                         },
                         child: const Text('Voir plus'),

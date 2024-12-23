@@ -4,22 +4,44 @@ class TodayRecipeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Padding(
+      backgroundColor: Color(0xFFEFF8FD),
+      body: Padding(
         padding: EdgeInsets.all(16.0),
         child: DefaultTabController(
           length: 3,
           child: Column(
             children: [
-              // Tabs for meals
-              const TabBar(
-                tabs: [
-                  Tab(text: 'Breakfast'),
-                  Tab(text: 'Lunch'),
-                  Tab(text: 'Dinner'),
-                ],
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.grey,
-                indicatorColor: Colors.black,
+              Container(
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.white, // Fond global de la barre
+                  borderRadius: BorderRadius.circular(25),
+                  // Coins arrondis
+                ),
+                margin: EdgeInsets.all(8.0),
+                child: TabBar(
+                  tabs: const [
+                    Tab(text: '  Breakfast '),
+                    Tab(text: '  Lunch  '),
+                    Tab(text: '  Dinner '),
+                  ],
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.grey,
+                  indicator: BoxDecoration(
+                    color: Colors.white30, // Fond pour l'onglet sélectionné
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: Colors.grey,
+                      width: 0.5,
+                    ),
+                  ),
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                  unselectedLabelStyle: TextStyle(
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
               ),
               const SizedBox(height: 16),
               // Recipe content for each tab
@@ -29,7 +51,7 @@ class TodayRecipeWidget extends StatelessWidget {
                     // Recipe for Breakfast
                     RecipeCard(
                       recipeTitle: 'Salad with eggs',
-                      imageAsset: 'assets/images/salad.png',
+                      imageAsset: 'assets/images/Pastawithveg.jpg',
                       calories: '294 kcal - 100g',
                       protein: 15,
                       fats: 10,
@@ -38,7 +60,7 @@ class TodayRecipeWidget extends StatelessWidget {
                     // Recipe for Lunch
                     RecipeCard(
                       recipeTitle: 'Grilled Chicken',
-                      imageAsset: 'assets/images/chicken.png',
+                      imageAsset: 'assets/images/Pastawithveg.jpg',
                       calories: '420 kcal - 150g',
                       protein: 40,
                       fats: 15,
@@ -85,6 +107,7 @@ class RecipeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
@@ -204,11 +227,11 @@ class MacroIndicator extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Container(
-          width: 20,
-          height: 50,
+          width: 5,
+          height: 20,
           decoration: BoxDecoration(
             color: color.withOpacity(0.7),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(5),
           ),
         ),
         const SizedBox(height: 8),

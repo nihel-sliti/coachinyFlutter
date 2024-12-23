@@ -1,0 +1,1700 @@
+[
+  {
+    "Nom_de_la_Recette": "Smoothie_aux_fruits_rouges",
+    "Ingre_dients": [
+      {
+        "name": "Poulet",
+        "calories": 200,
+        "price": 10.0,
+        "weight": 150
+      },
+      {
+        "name": "Épices",
+        "calories": 50,
+        "price": 5.0,
+        "weight": 20
+      },
+      {
+        "name": "Sel",
+        "calories": 10,
+        "price": 1.0,
+        "weight": 5
+      }
+    ],
+    "Calories": 250,
+    "Proteines_g": 10,
+    "Lipides_g": 5,
+    "Glucides_g": 45,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Petit_Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Omelette_aux_epinards",
+    "Ingre_dients": [
+      {
+        "name": "Oeufs",
+        "calories": 70,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Epinards",
+        "calories": 23,
+        "price": 1.0,
+        "weight": 30
+      },
+      {
+        "name": "Fromage",
+        "calories": 100,
+        "price": 1.5,
+        "weight": 20
+      },
+      {
+        "name": "Huile d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      }
+    ],
+    "Calories": 300,
+    "Proteines_g": 20,
+    "Lipides_g": 22,
+    "Glucides_g": 5,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Petit_Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Pancakes_au_chocolat",
+    "Ingre_dients": [
+      {
+        "name": "Farine",
+        "calories": 364,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Lait",
+        "calories": 42,
+        "price": 0.3,
+        "weight": 200
+      },
+      {
+        "name": "Oeufs",
+        "calories": 70,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Chocolat",
+        "calories": 546,
+        "price": 2.0,
+        "weight": 50
+      },
+      {
+        "name": "Sucre",
+        "calories": 387,
+        "price": 0.2,
+        "weight": 30
+      }
+    ],
+    "Calories": 350,
+    "Proteines_g": 8,
+    "Lipides_g": 15,
+    "Glucides_g": 50,
+    "Temps_de_Preparation_min": 15,
+    "categories": "Petit_Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Salade_de_fruits",
+    "Ingre_dients": [
+      {
+        "name": "Fruits au choix",
+        "calories": 50,
+        "price": 2.0,
+        "weight": 100
+      },
+      {
+        "name": "Sucre",
+        "calories": 387,
+        "price": 0.2,
+        "weight": 20
+      },
+      {
+        "name": "Citron",
+        "calories": 17,
+        "price": 0.3,
+        "weight": 10
+      }
+    ],
+    "Calories": 200,
+    "Proteines_g": 2,
+    "Lipides_g": 1,
+    "Glucides_g": 45,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Petit_Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Toast_avocat_et_oeuf",
+    "Ingre_dients": [
+      {
+        "name": "Pain complet",
+        "calories": 250,
+        "price": 1.0,
+        "weight": 70
+      },
+      {
+        "name": "Avocat",
+        "calories": 160,
+        "price": 1.5,
+        "weight": 100
+      },
+      {
+        "name": "Oeuf",
+        "calories": 70,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Huile d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      }
+    ],
+    "Calories": 350,
+    "Proteines_g": 12,
+    "Lipides_g": 25,
+    "Glucides_g": 30,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Petit_Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Bowl_de_yaourt_et_granola",
+    "Ingre_dients": [
+      {
+        "name": "Yaourt",
+        "calories": 59,
+        "price": 1.0,
+        "weight": 150
+      },
+      {
+        "name": "Granola",
+        "calories": 471,
+        "price": 1.5,
+        "weight": 50
+      },
+      {
+        "name": "Miel",
+        "calories": 304,
+        "price": 0.5,
+        "weight": 20
+      },
+      {
+        "name": "Fruits",
+        "calories": 52,
+        "price": 1.0,
+        "weight": 100
+      }
+    ],
+    "Calories": 350,
+    "Proteines_g": 12,
+    "Lipides_g": 10,
+    "Glucides_g": 50,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Petit_Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Smoothie_verde",
+    "Ingre_dients": [
+      {
+        "name": "Epinards",
+        "calories": 23,
+        "price": 1.0,
+        "weight": 30
+      },
+      {
+        "name": "Pomme",
+        "calories": 52,
+        "price": 0.5,
+        "weight": 150
+      },
+      {
+        "name": "Banane",
+        "calories": 89,
+        "price": 0.3,
+        "weight": 120
+      },
+      {
+        "name": "Lait d'amande",
+        "calories": 15,
+        "price": 1.0,
+        "weight": 200
+      }
+    ],
+    "Calories": 220,
+    "Proteines_g": 5,
+    "Lipides_g": 3,
+    "Glucides_g": 45,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Petit_Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Muffins_au_pommes_et_cannelle",
+    "Ingre_dients": [
+      {
+        "name": "Farine",
+        "calories": 364,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Pommes",
+        "calories": 52,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Cannelle",
+        "calories": 247,
+        "price": 0.3,
+        "weight": 5
+      },
+      {
+        "name": "Sucre",
+        "calories": 387,
+        "price": 0.2,
+        "weight": 30
+      },
+      {
+        "name": "Oeufs",
+        "calories": 70,
+        "price": 0.5,
+        "weight": 50
+      }
+    ],
+    "Calories": 250,
+    "Proteines_g": 6,
+    "Lipides_g": 12,
+    "Glucides_g": 35,
+    "Temps_de_Preparation_min": 15,
+    "categories": "Petit_Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Granola_maison",
+    "Ingre_dients": [
+      {
+        "name": "Avoine",
+        "calories": 389,
+        "price": 1.0,
+        "weight": 100
+      },
+      {
+        "name": "Miel",
+        "calories": 304,
+        "price": 0.5,
+        "weight": 20
+      },
+      {
+        "name": "Amandes",
+        "calories": 579,
+        "price": 1.5,
+        "weight": 50
+      },
+      {
+        "name": "Noix",
+        "calories": 654,
+        "price": 1.2,
+        "weight": 50
+      },
+      {
+        "name": "Huile d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      }
+    ],
+    "Calories": 400,
+    "Proteines_g": 10,
+    "Lipides_g": 25,
+    "Glucides_g": 35,
+    "Temps_de_Preparation_min": 20,
+    "categories": "Petit_Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Barres_de_granola",
+    "Ingre_dients": [
+      {
+        "name": "Avoine",
+        "calories": 389,
+        "price": 1.0,
+        "weight": 100
+      },
+      {
+        "name": "Miel",
+        "calories": 304,
+        "price": 0.5,
+        "weight": 20
+      },
+      {
+        "name": "Fruits secs",
+        "calories": 347,
+        "price": 1.0,
+        "weight": 50
+      },
+      {
+        "name": "Noix",
+        "calories": 654,
+        "price": 1.2,
+        "weight": 50
+      }
+    ],
+    "Calories": 150,
+    "Proteines_g": 5,
+    "Lipides_g": 8,
+    "Glucides_g": 18,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Gouter",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Yaourt_gracieux",
+    "Ingre_dients": [
+      {
+        "name": "Yaourt",
+        "calories": 59,
+        "price": 1.0,
+        "weight": 150
+      },
+      {
+        "name": "Amandes",
+        "calories": 579,
+        "price": 1.5,
+        "weight": 50
+      },
+      {
+        "name": "Miel",
+        "calories": 304,
+        "price": 0.5,
+        "weight": 20
+      }
+    ],
+    "Calories": 200,
+    "Proteines_g": 10,
+    "Lipides_g": 7,
+    "Glucides_g": 25,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Gouter",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Fruit_et_noix",
+    "Ingre_dients": [
+      {
+        "name": "Banane",
+        "calories": 89,
+        "price": 0.3,
+        "weight": 120
+      },
+      {
+        "name": "Amandes",
+        "calories": 579,
+        "price": 1.5,
+        "weight": 50
+      },
+      {
+        "name": "Noix de cajou",
+        "calories": 553,
+        "price": 1.2,
+        "weight": 50
+      }
+    ],
+    "Calories": 250,
+    "Proteines_g": 8,
+    "Lipides_g": 15,
+    "Glucides_g": 25,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Gouter",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Crisps_de_pommes",
+    "Ingre_dients": [
+      {
+        "name": "Pommes",
+        "calories": 52,
+        "price": 0.5,
+        "weight": 150
+      },
+      {
+        "name": "Cannelle",
+        "calories": 247,
+        "price": 0.3,
+        "weight": 5
+      },
+      {
+        "name": "Sucre",
+        "calories": 387,
+        "price": 0.2,
+        "weight": 30
+      }
+    ],
+    "Calories": 100,
+    "Proteines_g": 1,
+    "Lipides_g": 1,
+    "Glucides_g": 24,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Gouter",
+    "Like": 1
+  },
+  {
+    "Nom_de_la_Recette": "Banane_chocolat",
+    "Ingre_dients": [
+      {
+        "name": "Banane",
+        "calories": 89,
+        "price": 0.3,
+        "weight": 120
+      },
+      {
+        "name": "Chocolat_fondant",
+        "calories": 546,
+        "price": 2.0,
+        "weight": 50
+      }
+    ],
+    "Calories": 180,
+    "Proteines_g": 2,
+    "Lipides_g": 10,
+    "Glucides_g": 20,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Gouter",
+    "Like": 1
+  },
+  {
+    "Nom_de_la_Recette": "Salade_de_quinoa",
+    "Ingre_dients": [
+      {
+        "name": "Quinoa",
+        "calories": 120,
+        "price": 1.0,
+        "weight": 100
+      },
+      {
+        "name": "Avocat",
+        "calories": 160,
+        "price": 1.5,
+        "weight": 100
+      },
+      {
+        "name": "Tomates",
+        "calories": 18,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Concombre",
+        "calories": 16,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Huile d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      },
+      {
+        "name": "Citron",
+        "calories": 17,
+        "price": 0.3,
+        "weight": 10
+      }
+    ],
+    "Calories": 350,
+    "Proteines_g": 12,
+    "Lipides_g": 15,
+    "Glucides_g": 40,
+    "Temps_de_Preparation_min": 15,
+    "categories": "Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Poulet_grille_aux_legumes",
+    "Ingre_dients": [
+      {
+        "name": "Poulet",
+        "calories": 165,
+        "price": 10.0,
+        "weight": 150
+      },
+      {
+        "name": "Courgettes",
+        "calories": 17,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Tomates",
+        "calories": 18,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Huile d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      }
+    ],
+    "Calories": 400,
+    "Proteines_g": 35,
+    "Lipides_g": 15,
+    "Glucides_g": 25,
+    "Temps_de_Preparation_min": 25,
+    "categories": "Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Bol_de_riz_complet_et_avocat",
+    "Ingre_dients": [
+      {
+        "name": "Riz_complet",
+        "calories": 130,
+        "price": 1.0,
+        "weight": 200
+      },
+      {
+        "name": "Avocat",
+        "calories": 160,
+        "price": 1.5,
+        "weight": 100
+      },
+      {
+        "name": "Concombre",
+        "calories": 16,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Sauce_soja",
+        "calories": 53,
+        "price": 0.2,
+        "weight": 20
+      }
+    ],
+    "Calories": 350,
+    "Proteines_g": 8,
+    "Lipides_g": 10,
+    "Glucides_g": 50,
+    "Temps_de_Preparation_min": 15,
+    "categories": "Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Wrap_poulet_et_vegetaux",
+    "Ingre_dients": [
+      {
+        "name": "Poulet",
+        "calories": 165,
+        "price": 10.0,
+        "weight": 150
+      },
+      {
+        "name": "Laitue",
+        "calories": 5,
+        "price": 0.3,
+        "weight": 20
+      },
+      {
+        "name": "Tomates",
+        "calories": 18,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Wrap",
+        "calories": 130,
+        "price": 0.5,
+        "weight": 60
+      }
+    ],
+    "Calories": 450,
+    "Proteines_g": 30,
+    "Lipides_g": 20,
+    "Glucides_g": 35,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Poisson_grille_avec_legumes",
+    "Ingre_dients": [
+      {
+        "name": "Poisson_blanc",
+        "calories": 124,
+        "price": 12.0,
+        "weight": 150
+      },
+      {
+        "name": "Courgettes",
+        "calories": 17,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Carottes",
+        "calories": 41,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Huile_d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      }
+    ],
+    "Calories": 400,
+    "Proteines_g": 30,
+    "Lipides_g": 20,
+    "Glucides_g": 15,
+    "Temps_de_Preparation_min": 20,
+    "categories": "Diner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Soupe_de_legumes",
+    "Ingre_dients": [
+      {
+        "name": "Carottes",
+        "calories": 41,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Courgettes",
+        "calories": 17,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Tomates",
+        "calories": 18,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Oignon",
+        "calories": 40,
+        "price": 0.2,
+        "weight": 50
+      }
+    ],
+    "Calories": 150,
+    "Proteines_g": 5,
+    "Lipides_g": 3,
+    "Glucides_g": 30,
+    "Temps_de_Preparation_min": 20,
+    "categories": "Diner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Sushi_vegan",
+    "Ingre_dients": [
+      {
+        "name": "Riz",
+        "calories": 130,
+        "price": 1.0,
+        "weight": 200
+      },
+      {
+        "name": "Avocat",
+        "calories": 160,
+        "price": 1.5,
+        "weight": 100
+      },
+      {
+        "name": "Concombre",
+        "calories": 16,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Algues",
+        "calories": 45,
+        "price": 0.5,
+        "weight": 10
+      }
+    ],
+    "Calories": 250,
+    "Proteines_g": 5,
+    "Lipides_g": 5,
+    "Glucides_g": 45,
+    "Temps_de_Preparation_min": 20,
+    "categories": "Diner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Barres_de_granola",
+    "Ingre_dients": [
+      {
+        "name": "Avoine",
+        "calories": 389,
+        "price": 1.0,
+        "weight": 100
+      },
+      {
+        "name": "Miel",
+        "calories": 304,
+        "price": 0.5,
+        "weight": 20
+      },
+      {
+        "name": "Fruits_secs",
+        "calories": 347,
+        "price": 1.0,
+        "weight": 50
+      },
+      {
+        "name": "Noix",
+        "calories": 654,
+        "price": 1.2,
+        "weight": 50
+      }
+    ],
+    "Calories": 150,
+    "Proteines_g": 5,
+    "Lipides_g": 8,
+    "Glucides_g": 18,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Yaourt_gracieux",
+    "Ingre_dients": [
+      {
+        "name": "Yaourt",
+        "calories": 59,
+        "price": 1.0,
+        "weight": 150
+      },
+      {
+        "name": "Amandes",
+        "calories": 579,
+        "price": 1.5,
+        "weight": 50
+      },
+      {
+        "name": "Miel",
+        "calories": 304,
+        "price": 0.5,
+        "weight": 20
+      }
+    ],
+    "Calories": 200,
+    "Proteines_g": 10,
+    "Lipides_g": 7,
+    "Glucides_g": 25,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Fruit_et_noix",
+    "Ingre_dients": [
+      {
+        "name": "Banane",
+        "calories": 89,
+        "price": 0.3,
+        "weight": 120
+      },
+      {
+        "name": "Amandes",
+        "calories": 579,
+        "price": 1.5,
+        "weight": 50
+      },
+      {
+        "name": "Noix_de_cajou",
+        "calories": 553,
+        "price": 1.2,
+        "weight": 50
+      }
+    ],
+    "Calories": 250,
+    "Proteines_g": 8,
+    "Lipides_g": 15,
+    "Glucides_g": 25,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Crisps_de_pommes",
+    "Ingre_dients": [
+      {
+        "name": "Pommes",
+        "calories": 52,
+        "price": 0.5,
+        "weight": 150
+      },
+      {
+        "name": "Cannelle",
+        "calories": 247,
+        "price": 0.3,
+        "weight": 5
+      },
+      {
+        "name": "Sucre",
+        "calories": 387,
+        "price": 0.2,
+        "weight": 30
+      }
+    ],
+    "Calories": 100,
+    "Proteines_g": 1,
+    "Lipides_g": 1,
+    "Glucides_g": 24,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Snack",
+    "Like": 1
+  },
+  {
+    "Nom_de_la_Recette": "Banane_chocolat",
+    "Ingre_dients": [
+      {
+        "name": "Banane",
+        "calories": 89,
+        "price": 0.3,
+        "weight": 120
+      },
+      {
+        "name": "Chocolat_fondant",
+        "calories": 546,
+        "price": 2.0,
+        "weight": 50
+      }
+    ],
+    "Calories": 180,
+    "Proteines_g": 2,
+    "Lipides_g": 10,
+    "Glucides_g": 20,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Salade_de_quinoa",
+    "Ingre_dients": [
+      {
+        "name": "Quinoa",
+        "calories": 120,
+        "price": 1.0,
+        "weight": 100
+      },
+      {
+        "name": "Avocat",
+        "calories": 160,
+        "price": 1.5,
+        "weight": 100
+      },
+      {
+        "name": "Tomates",
+        "calories": 18,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Concombre",
+        "calories": 16,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Huile_d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      },
+      {
+        "name": "Citron",
+        "calories": 17,
+        "price": 0.3,
+        "weight": 10
+      }
+    ],
+    "Calories": 350,
+    "Proteines_g": 12,
+    "Lipides_g": 15,
+    "Glucides_g": 40,
+    "Temps_de_Preparation_min": 15,
+    "categories": "Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Poulet_grille_aux_legumes",
+    "Ingre_dients": [
+      {
+        "name": "Poulet",
+        "calories": 165,
+        "price": 10.0,
+        "weight": 150
+      },
+      {
+        "name": "Courgettes",
+        "calories": 17,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Tomates",
+        "calories": 18,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Huile_d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      }
+    ],
+    "Calories": 400,
+    "Proteines_g": 35,
+    "Lipides_g": 15,
+    "Glucides_g": 25,
+    "Temps_de_Preparation_min": 25,
+    "categories": "Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Bol_de_riz_complet_et_avocat",
+    "Ingre_dients": [
+      {
+        "name": "Riz_complet",
+        "calories": 130,
+        "price": 1.0,
+        "weight": 200
+      },
+      {
+        "name": "Avocat",
+        "calories": 160,
+        "price": 1.5,
+        "weight": 100
+      },
+      {
+        "name": "Concombre",
+        "calories": 16,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Sauce_soja",
+        "calories": 53,
+        "price": 0.2,
+        "weight": 20
+      }
+    ],
+    "Calories": 350,
+    "Proteines_g": 8,
+    "Lipides_g": 10,
+    "Glucides_g": 50,
+    "Temps_de_Preparation_min": 15,
+    "categories": "Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Wrap_poulet_et_vegetaux",
+    "Ingre_dients": [
+      {
+        "name": "Poulet",
+        "calories": 165,
+        "price": 10.0,
+        "weight": 150
+      },
+      {
+        "name": "Laitue",
+        "calories": 5,
+        "price": 0.3,
+        "weight": 20
+      },
+      {
+        "name": "Tomates",
+        "calories": 18,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Wrap",
+        "calories": 130,
+        "price": 0.5,
+        "weight": 60
+      }
+    ],
+    "Calories": 450,
+    "Proteines_g": 30,
+    "Lipides_g": 20,
+    "Glucides_g": 35,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Dejeuner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Poisson_grille_avec_legumes",
+    "Ingre_dients": [
+      {
+        "name": "Poisson_blanc",
+        "calories": 124,
+        "price": 12.0,
+        "weight": 150
+      },
+      {
+        "name": "Courgettes",
+        "calories": 17,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Carottes",
+        "calories": 41,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Huile_d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      }
+    ],
+    "Calories": 400,
+    "Proteines_g": 30,
+    "Lipides_g": 20,
+    "Glucides_g": 15,
+    "Temps_de_Preparation_min": 20,
+    "categories": "Diner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Soupe_de_legumes",
+    "Ingre_dients": [
+      {
+        "name": "Carottes",
+        "calories": 41,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Courgettes",
+        "calories": 17,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Tomates",
+        "calories": 18,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Oignon",
+        "calories": 40,
+        "price": 0.2,
+        "weight": 50
+      }
+    ],
+    "Calories": 150,
+    "Proteines_g": 5,
+    "Lipides_g": 3,
+    "Glucides_g": 30,
+    "Temps_de_Preparation_min": 20,
+    "categories": "Diner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Sushi_vegan",
+    "Ingre_dients": [
+      {
+        "name": "Riz",
+        "calories": 130,
+        "price": 1.0,
+        "weight": 200
+      },
+      {
+        "name": "Avocat",
+        "calories": 160,
+        "price": 1.5,
+        "weight": 100
+      },
+      {
+        "name": "Concombre",
+        "calories": 16,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Algues",
+        "calories": 45,
+        "price": 0.5,
+        "weight": 10
+      }
+    ],
+    "Calories": 250,
+    "Proteines_g": 5,
+    "Lipides_g": 5,
+    "Glucides_g": 45,
+    "Temps_de_Preparation_min": 20,
+    "categories": "Diner",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Barres_de_granola",
+    "Ingre_dients": [
+      {
+        "name": "Avoine",
+        "calories": 389,
+        "price": 1.0,
+        "weight": 100
+      },
+      {
+        "name": "Miel",
+        "calories": 304,
+        "price": 0.5,
+        "weight": 20
+      },
+      {
+        "name": "Fruits_secs",
+        "calories": 347,
+        "price": 1.0,
+        "weight": 50
+      },
+      {
+        "name": "Noix",
+        "calories": 654,
+        "price": 1.2,
+        "weight": 50
+      }
+    ],
+    "Calories": 150,
+    "Proteines_g": 5,
+    "Lipides_g": 8,
+    "Glucides_g": 18,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Yaourt_gracieux",
+    "Ingre_dients": [
+      {
+        "name": "Yaourt",
+        "calories": 59,
+        "price": 1.0,
+        "weight": 150
+      },
+      {
+        "name": "Amandes",
+        "calories": 579,
+        "price": 1.5,
+        "weight": 50
+      },
+      {
+        "name": "Miel",
+        "calories": 304,
+        "price": 0.5,
+        "weight": 20
+      }
+    ],
+    "Calories": 200,
+    "Proteines_g": 10,
+    "Lipides_g": 7,
+    "Glucides_g": 25,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Fruit_et_noix",
+    "Ingre_dients": [
+      {
+        "name": "Banane",
+        "calories": 89,
+        "price": 0.3,
+        "weight": 120
+      },
+      {
+        "name": "Amandes",
+        "calories": 579,
+        "price": 1.5,
+        "weight": 50
+      },
+      {
+        "name": "Noix_de_cajou",
+        "calories": 553,
+        "price": 1.2,
+        "weight": 50
+      }
+    ],
+    "Calories": 250,
+    "Proteines_g": 8,
+    "Lipides_g": 15,
+    "Glucides_g": 25,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Crisps_de_pommes",
+    "Ingre_dients": [
+      {
+        "name": "Pommes",
+        "calories": 52,
+        "price": 0.5,
+        "weight": 150
+      },
+      {
+        "name": "Cannelle",
+        "calories": 247,
+        "price": 0.3,
+        "weight": 5
+      },
+      {
+        "name": "Sucre",
+        "calories": 387,
+        "price": 0.2,
+        "weight": 30
+      }
+    ],
+    "Calories": 100,
+    "Proteines_g": 1,
+    "Lipides_g": 1,
+    "Glucides_g": 24,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Banane_chocolat",
+    "Ingre_dients": [
+      {
+        "name": "Banane",
+        "calories": 89,
+        "price": 0.3,
+        "weight": 120
+      },
+      {
+        "name": "Chocolat_fondant",
+        "calories": 546,
+        "price": 2.0,
+        "weight": 50
+      }
+    ],
+    "Calories": 180,
+    "Proteines_g": 2,
+    "Lipides_g": 10,
+    "Glucides_g": 20,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Energy_balls",
+    "Ingre_dients": [
+      {
+        "name": "Amandes",
+        "calories": 579,
+        "price": 1.5,
+        "weight": 50
+      },
+      {
+        "name": "Noix_de_cajou",
+        "calories": 553,
+        "price": 1.2,
+        "weight": 50
+      },
+      {
+        "name": "Dattes",
+        "calories": 282,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Cacao",
+        "calories": 228,
+        "price": 1.0,
+        "weight": 20
+      }
+    ],
+    "Calories": 120,
+    "Proteines_g": 3,
+    "Lipides_g": 6,
+    "Glucides_g": 15,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Popcorn_maison",
+    "Ingre_dients": [
+      {
+        "name": "Mais",
+        "calories": 365,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Huile_d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      },
+      {
+        "name": "Sel",
+        "calories": 0,
+        "price": 0.1,
+        "weight": 2
+      }
+    ],
+    "Calories": 100,
+    "Proteines_g": 3,
+    "Lipides_g": 5,
+    "Glucides_g": 15,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Smoothie_au_potiron",
+    "Ingre_dients": [
+      {
+        "name": "Potiron",
+        "calories": 30,
+        "price": 0.5,
+        "weight": 150
+      },
+      {
+        "name": "Banane",
+        "calories": 89,
+        "price": 0.3,
+        "weight": 120
+      },
+      {
+        "name": "Lait_d'amande",
+        "calories": 15,
+        "price": 1.0,
+        "weight": 200
+      },
+      {
+        "name": "Cannelle",
+        "calories": 247,
+        "price": 0.3,
+        "weight": 5
+      }
+    ],
+    "Calories": 200,
+    "Proteines_g": 5,
+    "Lipides_g": 3,
+    "Glucides_g": 35,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Chips_de_patates_douces",
+    "Ingre_dients": [
+      {
+        "name": "Patates_douces",
+        "calories": 86,
+        "price": 0.5,
+        "weight": 200
+      },
+      {
+        "name": "Huile_d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      },
+      {
+        "name": "Sel",
+        "calories": 0,
+        "price": 0.1,
+        "weight": 2
+      }
+    ],
+    "Calories": 180,
+    "Proteines_g": 2,
+    "Lipides_g": 8,
+    "Glucides_g": 30,
+    "Temps_de_Preparation_min": 20,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Tartines_d_avocat_et_tomates",
+    "Ingre_dients": [
+      {
+        "name": "Pain_complet",
+        "calories": 250,
+        "price": 1.0,
+        "weight": 70
+      },
+      {
+        "name": "Avocat",
+        "calories": 160,
+        "price": 1.5,
+        "weight": 100
+      },
+      {
+        "name": "Tomates",
+        "calories": 18,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Sel",
+        "calories": 0,
+        "price": 0.1,
+        "weight": 2
+      }
+    ],
+    "Calories": 250,
+    "Proteines_g": 7,
+    "Lipides_g": 15,
+    "Glucides_g": 30,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Muffins_aux_myrtilles",
+    "Ingre_dients": [
+      {
+        "name": "Farine",
+        "calories": 364,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Myrtilles",
+        "calories": 57,
+        "price": 1.0,
+        "weight": 50
+      },
+      {
+        "name": "Lait",
+        "calories": 42,
+        "price": 0.3,
+        "weight": 200
+      },
+      {
+        "name": "Oeufs",
+        "calories": 70,
+        "price": 0.5,
+        "weight": 50
+      }
+    ],
+    "Calories": 200,
+    "Proteines_g": 5,
+    "Lipides_g": 8,
+    "Glucides_g": 30,
+    "Temps_de_Preparation_min": 15,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Mini_burgers_vegetariens",
+    "Ingre_dients": [
+      {
+        "name": "Pois_chiches",
+        "calories": 164,
+        "price": 1.0,
+        "weight": 100
+      },
+      {
+        "name": "Pain_complet",
+        "calories": 250,
+        "price": 1.0,
+        "weight": 70
+      },
+      {
+        "name": "Avocat",
+        "calories": 160,
+        "price": 1.5,
+        "weight": 100
+      },
+      {
+        "name": "Laitue",
+        "calories": 5,
+        "price": 0.3,
+        "weight": 20
+      }
+    ],
+    "Calories": 250,
+    "Proteines_g": 10,
+    "Lipides_g": 8,
+    "Glucides_g": 35,
+    "Temps_de_Preparation_min": 20,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Crackers_aux_graines",
+    "Ingre_dients": [
+      {
+        "name": "Farine_complet",
+        "calories": 364,
+        "price": 0.5,
+        "weight": 100
+      },
+      {
+        "name": "Graines_de_chia",
+        "calories": 486,
+        "price": 1.0,
+        "weight": 20
+      },
+      {
+        "name": "Huile_d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      }
+    ],
+    "Calories": 150,
+    "Proteines_g": 5,
+    "Lipides_g": 9,
+    "Glucides_g": 20,
+    "Temps_de_Preparation_min": 15,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Bouchées_de_fromage_et_noix",
+    "Ingre_dients": [
+      {
+        "name": "Fromage_frais",
+        "calories": 84,
+        "price": 1.5,
+        "weight": 50
+      },
+      {
+        "name": "Noix",
+        "calories": 654,
+        "price": 1.2,
+        "weight": 50
+      },
+      {
+        "name": "Miel",
+        "calories": 304,
+        "price": 0.5,
+        "weight": 20
+      }
+    ],
+    "Calories": 200,
+    "Proteines_g": 8,
+    "Lipides_g": 15,
+    "Glucides_g": 10,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Salade_de_lentilles_et_carottes",
+    "Ingre_dients": [
+      {
+        "name": "Lentilles",
+        "calories": 116,
+        "price": 1.0,
+        "weight": 100
+      },
+      {
+        "name": "Carottes",
+        "calories": 41,
+        "price": 0.3,
+        "weight": 100
+      },
+      {
+        "name": "Huile_d'olive",
+        "calories": 119,
+        "price": 0.2,
+        "weight": 10
+      },
+      {
+        "name": "Vinaigre_balsamique",
+        "calories": 14,
+        "price": 0.3,
+        "weight": 20
+      }
+    ],
+    "Calories": 180,
+    "Proteines_g": 10,
+    "Lipides_g": 5,
+    "Glucides_g": 25,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Popsicles_aux_fruits",
+    "Ingre_dients": [
+      {
+        "name": "Fruits_au_choix",
+        "calories": 50,
+        "price": 2.0,
+        "weight": 100
+      },
+      {
+        "name": "Yaourt_gracieux",
+        "calories": 59,
+        "price": 1.0,
+        "weight": 150
+      }
+    ],
+    "Calories": 100,
+    "Proteines_g": 3,
+    "Lipides_g": 3,
+    "Glucides_g": 20,
+    "Temps_de_Preparation_min": 5,
+    "categories": "Snack",
+    "Like": 0
+  },
+  {
+    "Nom_de_la_Recette": "Avocat_et_oeuf_brouille",
+    "Ingre_dients": [
+      {
+        "name": "Avocat",
+        "calories": 160,
+        "price": 1.5,
+        "weight": 100
+      },
+      {
+        "name": "Oeufs",
+        "calories": 70,
+        "price": 0.5,
+        "weight": 50
+      },
+      {
+        "name": "Sel",
+        "calories": 0,
+        "price": 0.1,
+        "weight": 2
+      }
+    ],
+    "Calories": 250,
+    "Proteines_g": 12,
+    "Lipides_g": 20,
+    "Glucides_g": 10,
+    "Temps_de_Preparation_min": 10,
+    "categories": "Snack",
+    "Like": 0
+  }
+]

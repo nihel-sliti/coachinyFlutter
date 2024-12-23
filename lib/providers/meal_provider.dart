@@ -1,3 +1,4 @@
+import 'package:coachiny/models/ingredient.dart';
 import 'package:flutter/material.dart';
 import '../models/meal.dart';
 
@@ -31,7 +32,9 @@ class MealProvider with ChangeNotifier {
         type: 'Déjeuner',
         preparationTime: 20,
         calories: 350,
-        ingredients: ['Quinoa', 'Tomates', 'Concombre', 'Feta'],
+        ingredients: [
+          Ingredient(name: "name", calories: 500, price: 1.4, weight: 100)
+        ],
         instructions: 'Mélangez tous les ingrédients...',
       ),
       // Ajoutez d'autres repas...

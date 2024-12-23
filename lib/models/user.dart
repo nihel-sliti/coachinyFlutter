@@ -5,6 +5,9 @@ class User {
   final double taille;
   final int age;
   final String sexe;
+  final String
+      activityLevel; // 'sedentary', 'light', 'moderate', 'active', 'very active'
+  final String goal; // 'lose_weight' ou 'gain_weight'
 
   User({
     required this.id,
@@ -13,5 +16,7 @@ class User {
     required this.taille,
     required this.age,
     required this.sexe,
+    required this.activityLevel,
+    required this.goal,
   });
 }
