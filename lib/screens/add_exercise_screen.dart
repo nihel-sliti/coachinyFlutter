@@ -11,12 +11,12 @@ class AddExerciseScreen extends StatefulWidget {
   final int? exerciseIndex; // Index de l'exercice à éditer
 
   const AddExerciseScreen({
-    Key? key,
+    super.key,
     required this.programName,
     required this.sessionDate,
     this.existingExercise,
     this.exerciseIndex,
-  }) : super(key: key);
+  });
 
   @override
   _AddOrEditExerciseScreenState createState() =>
@@ -65,7 +65,8 @@ class _AddOrEditExerciseScreenState extends State<AddExerciseScreen> {
             children: [
               TextFormField(
                 initialValue: _exerciseName,
-                decoration: InputDecoration(labelText: 'Nom de l\'Exercice'),
+                decoration:
+                    const InputDecoration(labelText: 'Nom de l\'Exercice'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Veuillez entrer un nom';
@@ -78,8 +79,9 @@ class _AddOrEditExerciseScreenState extends State<AddExerciseScreen> {
               ),
               TextFormField(
                 initialValue: _load != 0.0 ? _load.toStringAsFixed(1) : '',
-                decoration: InputDecoration(labelText: 'Charge (kg)'),
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                decoration: const InputDecoration(labelText: 'Charge (kg)'),
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Veuillez entrer une charge';
@@ -95,7 +97,7 @@ class _AddOrEditExerciseScreenState extends State<AddExerciseScreen> {
               ),
               TextFormField(
                 initialValue: _reps != 0 ? _reps.toString() : '',
-                decoration: InputDecoration(labelText: 'Répétitions'),
+                decoration: const InputDecoration(labelText: 'Répétitions'),
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -112,7 +114,7 @@ class _AddOrEditExerciseScreenState extends State<AddExerciseScreen> {
               ),
               TextFormField(
                 initialValue: _sets != 0 ? _sets.toString() : '',
-                decoration: InputDecoration(labelText: 'Séries'),
+                decoration: const InputDecoration(labelText: 'Séries'),
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -127,11 +129,8 @@ class _AddOrEditExerciseScreenState extends State<AddExerciseScreen> {
                   _sets = int.parse(value!);
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               ElevatedButton(
-                child: Text(widget.existingExercise == null
-                    ? 'Ajouter l\'Exercice'
-                    : 'Enregistrer les Modifications'),
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.purple),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
@@ -162,6 +161,9 @@ class _AddOrEditExerciseScreenState extends State<AddExerciseScreen> {
                     Navigator.of(context).pop();
                   }
                 },
+                child: Text(widget.existingExercise == null
+                    ? 'Ajouter l\'Exercice'
+                    : 'Enregistrer les Modifications'),
               ),
             ],
           ),

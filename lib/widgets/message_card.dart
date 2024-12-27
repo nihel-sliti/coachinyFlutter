@@ -6,11 +6,11 @@ class MessageCard extends StatelessWidget {
   final String imageUrl;
 
   const MessageCard({
-    Key? key,
+    super.key,
     required this.message,
     required this.name,
     required this.imageUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

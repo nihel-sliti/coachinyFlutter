@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "248139743838",
+    "project_id": "coatchiny",
+    "storage_bucket": "coatchiny.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248139743838:android:39a417550e53a2568eeacf",
+        "android_client_info": {
+          "package_name": "com.example.coachiny"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhSu-h6Cp51v36jxiyXWuXVH74BRwr5Co"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

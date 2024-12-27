@@ -7,11 +7,11 @@ class ProgressionCard extends StatelessWidget {
   final String period;
 
   const ProgressionCard({
-    Key? key,
+    super.key,
     required this.data,
     required this.days,
     required this.period,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class ProgressionCard extends StatelessWidget {
                 children: [
                   // Grid and Axes
                   CustomPaint(
-                    size: Size(double.infinity, 200),
+                    size: const Size(double.infinity, 200),
                     painter: _AxisPainter(),
                   ),
                   // Bars and Days
@@ -171,11 +171,13 @@ class _AxisPainter extends CustomPainter {
 }
 
 class AnotherScreen extends StatelessWidget {
+  const AnotherScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Another Screen")),
-      body: Center(
+      appBar: AppBar(title: const Text("Another Screen")),
+      body: const Center(
         child: Text("This is the target screen!"),
       ),
     );

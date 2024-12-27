@@ -5,7 +5,7 @@ import 'package:coachiny/models/session.dart';
 import 'package:flutter/material.dart';
 
 class ProgressionProvider with ChangeNotifier {
-  List<Program> _programs = [];
+  final List<Program> _programs = [];
 
   List<Program> get programs => _programs;
 

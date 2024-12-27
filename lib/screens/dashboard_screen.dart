@@ -46,8 +46,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
       appBar: AppBar(
         title: const Text('Today\'s Recipe'),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
+          const Padding(
+            padding: EdgeInsets.only(right: 16.0),
             child: CircleAvatar(
               radius: 20,
               backgroundImage: NetworkImage(
@@ -56,7 +56,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
           ),
           IconButton(
-            icon: Icon(Icons.favorite_border), // Icône pour les favoris
+            icon: const Icon(Icons.favorite_border), // Icône pour les favoris
             onPressed: () {
               Navigator.push(
                 context,

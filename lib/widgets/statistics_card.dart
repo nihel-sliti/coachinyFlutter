@@ -7,11 +7,11 @@ class StatisticsCard extends StatelessWidget {
   final Widget targetScreen; // Screen to navigate to
 
   const StatisticsCard({
-    Key? key,
+    super.key,
     required this.score,
     required this.description,
     required this.targetScreen, // Pass the target screen as a parameter
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -68,12 +68,12 @@ class StatisticsCard extends StatelessWidget {
                           color: Color(0xFF77D1B5),
                           thicknessUnit: GaugeSizeUnit.factor,
                         ),
-                        pointers: <GaugePointer>[
+                        pointers: const <GaugePointer>[
                           RangePointer(
                             value: 60,
                             cornerStyle: CornerStyle.bothCurve,
                             width: 0.2,
-                            color: const Color(0xFFB8FCE7), // Highlight color
+                            color: Color(0xFFB8FCE7), // Highlight color
                             sizeUnit: GaugeSizeUnit.factor,
                           ),
                         ],

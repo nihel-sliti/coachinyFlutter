@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProductContent extends StatelessWidget {
+  const ProductContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,13 +15,13 @@ class ProductContent extends StatelessWidget {
               hintText: 'Enter some ingredients',
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-              prefixIcon: Icon(Icons.search),
+              prefixIcon: const Icon(Icons.search),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Expanded(
             child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,

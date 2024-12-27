@@ -4,7 +4,7 @@ import 'package:fl_chart/fl_chart.dart';
 class NutrientPieChart extends StatelessWidget {
   final Map<String, double> dataMap;
 
-  const NutrientPieChart({Key? key, required this.dataMap}) : super(key: key);
+  const NutrientPieChart({super.key, required this.dataMap});
 
   @override
   Widget build(BuildContext context) {

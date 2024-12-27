@@ -3,6 +3,8 @@ import 'package:coachiny/models/food_iteem.dart';
 import 'package:flutter/material.dart';
 
 class AddFoodScreen extends StatefulWidget {
+  const AddFoodScreen({super.key});
+
   @override
   _AddFoodScreenState createState() => _AddFoodScreenState();
 }
@@ -34,7 +36,7 @@ class _AddFoodScreenState extends State<AddFoodScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Ajouter un Aliment'),
+          title: const Text('Ajouter un Aliment'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -44,7 +46,8 @@ class _AddFoodScreenState extends State<AddFoodScreen> {
                   child: Column(
                 children: [
                   TextFormField(
-                    decoration: InputDecoration(labelText: 'Nom de l\'aliment'),
+                    decoration:
+                        const InputDecoration(labelText: 'Nom de l\'aliment'),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Veuillez entrer un nom';
@@ -55,10 +58,10 @@ class _AddFoodScreenState extends State<AddFoodScreen> {
                       _name = value!;
                     },
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   TextFormField(
-                    decoration:
-                        InputDecoration(labelText: 'Calories par portion'),
+                    decoration: const InputDecoration(
+                        labelText: 'Calories par portion'),
                     keyboardType: TextInputType.number,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -73,10 +76,10 @@ class _AddFoodScreenState extends State<AddFoodScreen> {
                       _calories = double.parse(value!);
                     },
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   TextFormField(
-                    decoration:
-                        InputDecoration(labelText: 'Protéines (g) par portion'),
+                    decoration: const InputDecoration(
+                        labelText: 'Protéines (g) par portion'),
                     keyboardType: TextInputType.number,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -91,10 +94,10 @@ class _AddFoodScreenState extends State<AddFoodScreen> {
                       _protein = double.parse(value!);
                     },
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   TextFormField(
-                    decoration:
-                        InputDecoration(labelText: 'Glucides (g) par portion'),
+                    decoration: const InputDecoration(
+                        labelText: 'Glucides (g) par portion'),
                     keyboardType: TextInputType.number,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -109,10 +112,10 @@ class _AddFoodScreenState extends State<AddFoodScreen> {
                       _carbs = double.parse(value!);
                     },
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   TextFormField(
-                    decoration:
-                        InputDecoration(labelText: 'Lipides (g) par portion'),
+                    decoration: const InputDecoration(
+                        labelText: 'Lipides (g) par portion'),
                     keyboardType: TextInputType.number,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -127,10 +130,10 @@ class _AddFoodScreenState extends State<AddFoodScreen> {
                       _fat = double.parse(value!);
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: _submit,
-                    child: Text('Ajouter'),
+                    child: const Text('Ajouter'),
                   ),
                 ],
               ))),

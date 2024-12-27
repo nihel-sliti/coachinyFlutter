@@ -9,15 +9,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Progressioncalculatorscreen extends StatelessWidget {
+  const Progressioncalculatorscreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // Ajout d'une barre d'applications avec un bouton pour ajouter un nouveau programme
       appBar: AppBar(
-        title: Text('Suivi des Entraînements'),
+        title: const Text('Suivi des Entraînements'),
         actions: [
           IconButton(
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
             onPressed: () {
               // Ouvrir l'écran pour ajouter un nouveau programme
               Navigator.push(
@@ -31,7 +33,7 @@ class Progressioncalculatorscreen extends StatelessWidget {
       body: Consumer<WorkoutProvider>(
         builder: (context, workoutProvider, child) {
           if (workoutProvider.programs.isEmpty) {
-            return Center(
+            return const Center(
               child: Text(
                 'Aucun programme disponible. Ajoutez un programme.',
                 style: TextStyle(fontSize: 18),
@@ -54,20 +56,20 @@ class Progressioncalculatorscreen extends StatelessWidget {
 class ProgramCard extends StatelessWidget {
   final Program program;
 
-  const ProgramCard({Key? key, required this.program}) : super(key: key);
+  const ProgramCard({super.key, required this.program});
 
   @override
   Widget build(BuildContext context) {
     final workoutProvider =
         Provider.of<WorkoutProvider>(context, listen: false);
     return Card(
-      margin: EdgeInsets.all(12.0),
+      margin: const EdgeInsets.all(12.0),
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
       child: ExpansionTile(
         title: Text(
           program.name,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
             'Total Tonnage : ${program.totalTonnage.toStringAsFixed(1)} kg'),
@@ -75,7 +77,7 @@ class ProgramCard extends StatelessWidget {
           // Liste des séances
           ListView.builder(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: program.sessions.length,
             itemBuilder: (context, sessionIndex) {
               final session = program.sessions[sessionIndex];
@@ -84,7 +86,7 @@ class ProgramCard extends StatelessWidget {
                 subtitle: Text(
                     'Total Tonnage : ${session.totalTonnage.toStringAsFixed(1)} kg'),
                 trailing: IconButton(
-                  icon: Icon(Icons.add),
+                  icon: const Icon(Icons.add),
                   onPressed: () {
                     // Ajouter un exercice à cette séance
                     Navigator.push(
@@ -115,8 +117,8 @@ class ProgramCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton.icon(
-              icon: Icon(Icons.add),
-              label: Text('Ajouter une Séance'),
+              icon: const Icon(Icons.add),
+              label: const Text('Ajouter une Séance'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
               ),
@@ -163,7 +165,7 @@ class ProgramCard extends StatelessWidget {
 class ProgressChart extends StatelessWidget {
   final Program program;
 
-  const ProgressChart({Key? key, required this.program}) : super(key: key);
+  const ProgressChart({super.key, required this.program});
 
   @override
   Widget build(BuildContext context) {
@@ -198,8 +200,8 @@ class ProgressChart extends StatelessWidget {
           ),
           titlesData: FlTitlesData(
             show: true,
-            rightTitles: AxisTitles(),
-            topTitles: AxisTitles(),
+            rightTitles: const AxisTitles(),
+            topTitles: const AxisTitles(),
             bottomTitles: AxisTitles(
               sideTitles: SideTitles(
                 showTitles: true,
@@ -208,7 +210,7 @@ class ProgressChart extends StatelessWidget {
                       .split(' ')[0]; // Simplify label
                   return SideTitleWidget(
                     axisSide: meta.axisSide,
-                    child: Text(label, style: TextStyle(fontSize: 10)),
+                    child: Text(label, style: const TextStyle(fontSize: 10)),
                   );
                 },
                 reservedSize: 42,
@@ -221,7 +223,7 @@ class ProgressChart extends StatelessWidget {
                 interval: 1000,
                 getTitlesWidget: (value, meta) {
                   return Text('${value.toInt()}',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black54,
                         fontSize: 10,
                       ));
@@ -244,8 +246,7 @@ class SessionDetailScreen extends StatelessWidget {
   final Session session;
 
   const SessionDetailScreen(
-      {Key? key, required this.program, required this.session})
-      : super(key: key);
+      {super.key, required this.program, required this.session});
 
   @override
   Widget build(BuildContext context) {

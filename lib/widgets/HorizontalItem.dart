@@ -6,11 +6,11 @@ class HorizontalItem extends StatelessWidget {
   final Widget destination; // The destination screen
 
   const HorizontalItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.label,
     required this.destination, // Pass the screen to navigate to
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

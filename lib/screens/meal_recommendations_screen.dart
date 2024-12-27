@@ -5,6 +5,8 @@ import '../widgets/meal_item.dart';
 import '../widgets/filter_modal.dart';
 
 class MealRecommendationsScreen extends StatelessWidget {
+  const MealRecommendationsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final mealProvider = Provider.of<MealProvider>(context);
@@ -13,10 +15,10 @@ class MealRecommendationsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFEFF8FD),
       appBar: AppBar(
-        title: Text('Recommandations de Repas'),
+        title: const Text('Recommandations de Repas'),
         actions: [
           IconButton(
-            icon: Icon(Icons.filter_list),
+            icon: const Icon(Icons.filter_list),
             onPressed: () {
               // Ouvrir le modal de filtrage
               showModalBottomSheet(
@@ -32,20 +34,20 @@ class MealRecommendationsScreen extends StatelessWidget {
               mealProvider.sortMealsBy(value, ascending);
             },
             itemBuilder: (ctx) => [
-              PopupMenuItem(
-                child: Text('Temps de préparation'),
+              const PopupMenuItem(
                 value: 'Temps de préparation',
+                child: Text('Temps de préparation'),
               ),
-              PopupMenuItem(
-                child: Text('Calories'),
+              const PopupMenuItem(
                 value: 'Calories',
+                child: Text('Calories'),
               ),
             ],
           ),
         ],
       ),
       body: meals.isEmpty
-          ? Center(child: Text('Aucun repas ne correspond aux critères.'))
+          ? const Center(child: Text('Aucun repas ne correspond aux critères.'))
           : ListView.builder(
               itemCount: meals.length,
               itemBuilder: (ctx, index) => MealItem(meal: meals[index]),

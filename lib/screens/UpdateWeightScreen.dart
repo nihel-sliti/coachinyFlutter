@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class UpdateWeightScreen extends StatefulWidget {
+  const UpdateWeightScreen({super.key});
+
   @override
   _UpdateWeightScreenState createState() => _UpdateWeightScreenState();
 }
@@ -37,31 +39,32 @@ class _UpdateWeightScreenState extends State<UpdateWeightScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
+            const Text(
               'Update Weight',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             // Current Weight Display
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '${newWeight.toStringAsFixed(1)}',
-                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                  newWeight.toStringAsFixed(1),
+                  style: const TextStyle(
+                      fontSize: 36, fontWeight: FontWeight.bold),
                 ),
-                Text(
+                const Text(
                   ' kg',
                   style: TextStyle(fontSize: 18, color: Colors.grey),
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             // Numerical Keypad
             GridView.builder(
               shrinkWrap: true,
               itemCount: 12, // 0-9, decimal point, clear
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3, childAspectRatio: 2),
               itemBuilder: (context, index) {
                 String buttonText;
@@ -92,13 +95,13 @@ class _UpdateWeightScreenState extends State<UpdateWeightScreen> {
                   child: Center(
                     child: Text(
                       buttonText,
-                      style: TextStyle(fontSize: 24),
+                      style: const TextStyle(fontSize: 24),
                     ),
                   ),
                 );
               },
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             // Action Buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -107,7 +110,7 @@ class _UpdateWeightScreenState extends State<UpdateWeightScreen> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Cancel'),
+                  child: const Text('Cancel'),
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -123,13 +126,13 @@ class _UpdateWeightScreenState extends State<UpdateWeightScreen> {
                     } else {
                       // Optionally show an error message
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                           content: Text('Please enter a valid weight.'),
                         ),
                       );
                     }
                   },
-                  child: Text('Save'),
+                  child: const Text('Save'),
                 ),
               ],
             ),

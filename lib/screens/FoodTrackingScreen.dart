@@ -10,7 +10,8 @@ class FoodTrackingScreen extends StatefulWidget {
   final double dailyCarbs;
   final double dailyFat;
 
-  FoodTrackingScreen({
+  const FoodTrackingScreen({
+    super.key,
     required this.dailyCalories,
     required this.dailyProtein,
     required this.dailyCarbs,
@@ -22,8 +23,8 @@ class FoodTrackingScreen extends StatefulWidget {
 }
 
 class _FoodTrackingScreenState extends State<FoodTrackingScreen> {
-  List<ConsumedFood> _consumedFoods = [];
-  List<FoodItem> _availableFoods = [
+  final List<ConsumedFood> _consumedFoods = [];
+  final List<FoodItem> _availableFoods = [
     // Liste de base de quelques aliments
     FoodItem(
       name: 'Poulet Grillé',
@@ -95,10 +96,10 @@ class _FoodTrackingScreenState extends State<FoodTrackingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Suivi des Aliments'),
+          title: const Text('Suivi des Aliments'),
           actions: [
             IconButton(
-              icon: Icon(Icons.add),
+              icon: const Icon(Icons.add),
               onPressed: _navigateToAddFood,
               tooltip: 'Ajouter un nouvel aliment',
             ),
@@ -113,11 +114,11 @@ class _FoodTrackingScreenState extends State<FoodTrackingScreen> {
                 itemBuilder: (context, index) {
                   final consumedFood = _consumedFoods[index];
                   return ListTile(
-                    leading: Icon(Icons.food_bank),
+                    leading: const Icon(Icons.food_bank),
                     title: Text(consumedFood.food.name),
                     subtitle: Text('Quantité : ${consumedFood.quantity}'),
                     trailing: IconButton(
-                      icon: Icon(Icons.delete, color: Colors.red),
+                      icon: const Icon(Icons.delete, color: Colors.red),
                       onPressed: () {
                         _removeConsumedFood(index);
                       },
@@ -126,18 +127,18 @@ class _FoodTrackingScreenState extends State<FoodTrackingScreen> {
                 },
               ),
             ),
-            Divider(),
+            const Divider(),
             // Résumé des apports
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Résumé des Apports :',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                       'Calories consommées : ${_totalCalories.toStringAsFixed(0)} / ${widget.dailyCalories.toStringAsFixed(0)} kcal'),
                   Text(

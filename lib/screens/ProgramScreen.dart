@@ -1,4 +1,3 @@
-// lib/screens/ProgramScreen.dart
 import 'package:coachiny/screens/Trackweight.dart';
 import 'package:flutter/material.dart';
 import 'DietCalculatorScreen.dart';
@@ -6,14 +5,17 @@ import 'ProgressionCalculatorScreen.dart';
 import 'MeasurementsTrackingScreen.dart';
 
 class ProgramScreen extends StatelessWidget {
+  const ProgramScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Programmes'),
+        title: const Text('Programmes'),
+        backgroundColor: Colors.teal,
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           ProgramOption(
             title: 'Calculateur Diététique',
@@ -25,7 +27,7 @@ class ProgramScreen extends StatelessWidget {
               );
             },
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           ProgramOption(
             title: 'Calculateur de Progression (En Entraînement)',
             icon: Icons.fitness_center,
@@ -37,7 +39,7 @@ class ProgramScreen extends StatelessWidget {
               );
             },
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           ProgramOption(
             title: 'Suivi des Mensurations',
             icon: Icons.track_changes,
@@ -49,6 +51,7 @@ class ProgramScreen extends StatelessWidget {
               );
             },
           ),
+          const SizedBox(height: 16),
           ProgramOption(
             title: 'Track weight',
             icon: Icons.track_changes_sharp,
@@ -70,7 +73,8 @@ class ProgramOption extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;
 
-  ProgramOption({
+  const ProgramOption({
+    super.key,
     required this.title,
     required this.icon,
     required this.onTap,
@@ -82,13 +86,18 @@ class ProgramOption extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
+      elevation: 5,
       child: ListTile(
-        leading: Icon(icon, size: 40, color: Colors.blue),
+        leading: Icon(icon, size: 40, color: Colors.teal),
         title: Text(
           title,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.teal,
+          ),
         ),
-        trailing: Icon(Icons.arrow_forward_ios),
+        trailing: const Icon(Icons.arrow_forward_ios, color: Colors.teal),
         onTap: onTap,
       ),
     );

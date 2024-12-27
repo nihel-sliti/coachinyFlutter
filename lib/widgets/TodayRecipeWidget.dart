@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class TodayRecipeWidget extends StatelessWidget {
+  const TodayRecipeWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEFF8FD),
+      backgroundColor: const Color(0xFFEFF8FD),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: DefaultTabController(
           length: 3,
           child: Column(
@@ -18,7 +20,7 @@ class TodayRecipeWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(25),
                   // Coins arrondis
                 ),
-                margin: EdgeInsets.all(8.0),
+                margin: const EdgeInsets.all(8.0),
                 child: TabBar(
                   tabs: const [
                     Tab(text: '  Breakfast '),
@@ -35,17 +37,17 @@ class TodayRecipeWidget extends StatelessWidget {
                       width: 0.5,
                     ),
                   ),
-                  labelStyle: TextStyle(
+                  labelStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
-                  unselectedLabelStyle: TextStyle(
+                  unselectedLabelStyle: const TextStyle(
                     fontWeight: FontWeight.normal,
                   ),
                 ),
               ),
               const SizedBox(height: 16),
               // Recipe content for each tab
-              Expanded(
+              const Expanded(
                 child: TabBarView(
                   children: [
                     // Recipe for Breakfast
@@ -96,6 +98,7 @@ class RecipeCard extends StatelessWidget {
   final int carbs;
 
   const RecipeCard({
+    super.key,
     required this.recipeTitle,
     required this.imageAsset,
     required this.calories,
@@ -120,7 +123,7 @@ class RecipeCard extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
+                  SizedBox(
                     width: 50, // Adjust this to control the container's width
                     height: 300,
 
@@ -130,7 +133,7 @@ class RecipeCard extends StatelessWidget {
                         alignment: Alignment
                             .bottomLeft, // Center the text inside the container
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
+                          padding: EdgeInsets.symmetric(
                               vertical: 8.0), // Adjust spacing if needed
                           child: Text(
                             'Today recipe',
@@ -211,7 +214,10 @@ class MacroIndicator extends StatelessWidget {
   final Color color;
 
   const MacroIndicator(
-      {required this.label, required this.value, required this.color});
+      {super.key,
+      required this.label,
+      required this.value,
+      required this.color});
 
   @override
   Widget build(BuildContext context) {

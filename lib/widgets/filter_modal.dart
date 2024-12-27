@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import '../providers/meal_provider.dart';
 
 class FilterModal extends StatefulWidget {
+  const FilterModal({super.key});
+
   @override
   _FilterModalState createState() => _FilterModalState();
 }
@@ -32,11 +34,11 @@ class _FilterModalState extends State<FilterModal> {
     ];
 
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
+          const Text(
             'Filtres',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
@@ -51,7 +53,7 @@ class _FilterModalState extends State<FilterModal> {
                 _selectedMealType = value!;
               });
             },
-            decoration: InputDecoration(labelText: 'Type de repas'),
+            decoration: const InputDecoration(labelText: 'Type de repas'),
           ),
           // Filtre par temps de préparation
           Slider(
@@ -85,7 +87,7 @@ class _FilterModalState extends State<FilterModal> {
           ),
           Text(
               'Calories: ${_calorieRange.start.round()} - ${_calorieRange.end.round()} kcal'),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
               Provider.of<MealProvider>(context, listen: false).updateFilters(
@@ -95,7 +97,7 @@ class _FilterModalState extends State<FilterModal> {
               );
               Navigator.of(context).pop();
             },
-            child: Text('Appliquer les filtres'),
+            child: const Text('Appliquer les filtres'),
           ),
         ],
       ),

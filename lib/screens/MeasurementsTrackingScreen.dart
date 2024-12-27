@@ -5,14 +5,16 @@ import '../providers/MeasurementsProvider.dart';
 import 'UpdateMeasurementScreen.dart';
 
 class MeasurementsTrackingScreen extends StatelessWidget {
+  const MeasurementsTrackingScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Suivi des Mensurations'),
+        title: const Text('Suivi des Mensurations'),
         actions: [
           IconButton(
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
             onPressed: () {
               // Ouvrir un dialogue pour ajouter une nouvelle mensuration
               showDialog(
@@ -30,19 +32,20 @@ class MeasurementsTrackingScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final measurement = measurementsProvider.measurements[index];
               return Card(
-                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 elevation: 4,
                 child: ListTile(
                   title: Text(
                     measurement.name,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text(
                     'Actuel: ${measurement.currentValue.toStringAsFixed(1)} cm | Objectif: ${measurement.goalValue.toStringAsFixed(1)} cm',
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                   trailing: IconButton(
-                    icon: Icon(Icons.edit, color: Colors.orange),
+                    icon: const Icon(Icons.edit, color: Colors.orange),
                     onPressed: () {
                       // Ouvrir le dialogue de mise à jour de la mensuration
                       showDialog(
@@ -75,6 +78,8 @@ class MeasurementsTrackingScreen extends StatelessWidget {
 }
 
 class AddMeasurementDialog extends StatefulWidget {
+  const AddMeasurementDialog({super.key});
+
   @override
   _AddMeasurementDialogState createState() => _AddMeasurementDialogState();
 }
@@ -91,7 +96,7 @@ class _AddMeasurementDialogState extends State<AddMeasurementDialog> {
         Provider.of<MeasurementsProvider>(context, listen: false);
 
     return AlertDialog(
-      title: Text('Ajouter une Mensuration'),
+      title: const Text('Ajouter une Mensuration'),
       content: Form(
         key: _formKey,
         child: SingleChildScrollView(
@@ -99,7 +104,7 @@ class _AddMeasurementDialogState extends State<AddMeasurementDialog> {
             children: [
               TextFormField(
                 decoration:
-                    InputDecoration(labelText: 'Nom (ex. Tour de Bras)'),
+                    const InputDecoration(labelText: 'Nom (ex. Tour de Bras)'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Veuillez entrer un nom';
@@ -111,8 +116,10 @@ class _AddMeasurementDialogState extends State<AddMeasurementDialog> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Valeur Actuelle (cm)'),
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                decoration:
+                    const InputDecoration(labelText: 'Valeur Actuelle (cm)'),
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Veuillez entrer une valeur';
@@ -127,8 +134,9 @@ class _AddMeasurementDialogState extends State<AddMeasurementDialog> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Objectif (cm)'),
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                decoration: const InputDecoration(labelText: 'Objectif (cm)'),
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Veuillez entrer une valeur';
@@ -148,13 +156,12 @@ class _AddMeasurementDialogState extends State<AddMeasurementDialog> {
       ),
       actions: [
         TextButton(
-          child: Text('Annuler'),
+          child: const Text('Annuler'),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
         ElevatedButton(
-          child: Text('Ajouter'),
           style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
           onPressed: () {
             if (_formKey.currentState!.validate()) {
@@ -177,6 +184,7 @@ class _AddMeasurementDialogState extends State<AddMeasurementDialog> {
               Navigator.of(context).pop();
             }
           },
+          child: Text('Ajouter'),
         ),
       ],
     );
@@ -186,7 +194,7 @@ class _AddMeasurementDialogState extends State<AddMeasurementDialog> {
 class MeasurementDetailScreen extends StatelessWidget {
   final Measurement measurement;
 
-  MeasurementDetailScreen({required this.measurement});
+  const MeasurementDetailScreen({super.key, required this.measurement});
 
   @override
   Widget build(BuildContext context) {
@@ -199,19 +207,19 @@ class MeasurementDetailScreen extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              '${measurement.name}',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              measurement.name,
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               'Valeur Actuelle: ${measurement.currentValue.toStringAsFixed(1)} cm',
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             Text(
               'Objectif: ${measurement.goalValue.toStringAsFixed(1)} cm',
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
                 itemCount: measurement.history.length,

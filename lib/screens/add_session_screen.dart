@@ -7,8 +7,7 @@ import '../models/session.dart';
 class AddSessionScreen extends StatefulWidget {
   final String programName;
 
-  const AddSessionScreen({Key? key, required this.programName})
-      : super(key: key);
+  const AddSessionScreen({super.key, required this.programName});
 
   @override
   _AddSessionScreenState createState() => _AddSessionScreenState();
@@ -25,7 +24,7 @@ class _AddSessionScreenState extends State<AddSessionScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ajouter une Séance'),
+        title: const Text('Ajouter une Séance'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -34,7 +33,8 @@ class _AddSessionScreenState extends State<AddSessionScreen> {
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(labelText: 'Date de la Séance'),
+                decoration:
+                    const InputDecoration(labelText: 'Date de la Séance'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Veuillez entrer une date';
@@ -45,9 +45,8 @@ class _AddSessionScreenState extends State<AddSessionScreen> {
                   _sessionDate = value!;
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               ElevatedButton(
-                child: Text('Créer la Séance'),
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
@@ -59,6 +58,7 @@ class _AddSessionScreenState extends State<AddSessionScreen> {
                     Navigator.of(context).pop();
                   }
                 },
+                child: Text('Créer la Séance'),
               ),
             ],
           ),

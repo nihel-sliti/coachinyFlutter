@@ -7,7 +7,8 @@ class UpdateMeasurementScreen extends StatefulWidget {
   final String measurementName;
   final double currentValue;
 
-  UpdateMeasurementScreen({
+  const UpdateMeasurementScreen({
+    super.key,
     required this.measurementName,
     required this.currentValue,
   });
@@ -58,31 +59,32 @@ class _UpdateMeasurementScreenState extends State<UpdateMeasurementScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
+            const Text(
               'Mettre à Jour ',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             // Affichage de la valeur actuelle
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '${newValue.toStringAsFixed(1)}',
-                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                  newValue.toStringAsFixed(1),
+                  style: const TextStyle(
+                      fontSize: 36, fontWeight: FontWeight.bold),
                 ),
-                Text(
+                const Text(
                   ' cm',
                   style: TextStyle(fontSize: 18, color: Colors.grey),
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             // Clavier numérique
             GridView.builder(
               shrinkWrap: true,
               itemCount: 12, // 0-9, ., C
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 childAspectRatio: 2,
               ),
@@ -108,13 +110,13 @@ class _UpdateMeasurementScreenState extends State<UpdateMeasurementScreen> {
                   child: Center(
                     child: Text(
                       buttonText,
-                      style: TextStyle(fontSize: 24),
+                      style: const TextStyle(fontSize: 24),
                     ),
                   ),
                 );
               },
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             // Boutons d'action
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -123,7 +125,7 @@ class _UpdateMeasurementScreenState extends State<UpdateMeasurementScreen> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Annuler'),
+                  child: const Text('Annuler'),
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -140,13 +142,13 @@ class _UpdateMeasurementScreenState extends State<UpdateMeasurementScreen> {
                     } else {
                       // Afficher un message d'erreur
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                           content: Text('Veuillez entrer une valeur valide.'),
                         ),
                       );
                     }
                   },
-                  child: Text('Sauvegarder'),
+                  child: const Text('Sauvegarder'),
                 ),
               ],
             ),

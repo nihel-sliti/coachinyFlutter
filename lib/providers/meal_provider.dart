@@ -9,7 +9,7 @@ class MealProvider with ChangeNotifier {
   // Critères de filtrage
   String _selectedMealType = 'Tous';
   int _maxPreparationTime = 60; // minutes
-  RangeValues _calorieRange = RangeValues(0, 1000);
+  RangeValues _calorieRange = const RangeValues(0, 1000);
 
   // Getters
   List<Meal> get meals => _filteredMeals;

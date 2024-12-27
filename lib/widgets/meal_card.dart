@@ -5,7 +5,7 @@ import '../screens/meal_detail_screen.dart'; // Assurez-vous d'importer correcte
 class MealCard extends StatelessWidget {
   final Meal meal;
 
-  const MealCard({Key? key, required this.meal}) : super(key: key);
+  const MealCard({super.key, required this.meal});
 
   @override
   Widget build(BuildContext context) {

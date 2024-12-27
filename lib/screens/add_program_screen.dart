@@ -6,6 +6,8 @@ import '../models/program.dart';
 import '../models/session.dart';
 
 class AddProgramScreen extends StatefulWidget {
+  const AddProgramScreen({super.key});
+
   @override
   _AddProgramScreenState createState() => _AddProgramScreenState();
 }
@@ -22,7 +24,7 @@ class _AddProgramScreenState extends State<AddProgramScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ajouter un Programme'),
+        title: const Text('Ajouter un Programme'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -31,7 +33,8 @@ class _AddProgramScreenState extends State<AddProgramScreen> {
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(labelText: 'Nom du Programme'),
+                decoration:
+                    const InputDecoration(labelText: 'Nom du Programme'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Veuillez entrer un nom';
@@ -42,9 +45,9 @@ class _AddProgramScreenState extends State<AddProgramScreen> {
                   _programName = value!;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               DropdownButtonFormField<int>(
-                decoration: InputDecoration(labelText: 'Durée (Mois)'),
+                decoration: const InputDecoration(labelText: 'Durée (Mois)'),
                 value: _durationMonths,
                 items: [1, 2, 3, 4, 5, 6].map((month) {
                   return DropdownMenuItem(
@@ -58,9 +61,8 @@ class _AddProgramScreenState extends State<AddProgramScreen> {
                   });
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               ElevatedButton(
-                child: Text('Créer le Programme'),
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
@@ -85,6 +87,7 @@ class _AddProgramScreenState extends State<AddProgramScreen> {
                     Navigator.of(context).pop();
                   }
                 },
+                child: Text('Créer le Programme'),
               ),
             ],
           ),

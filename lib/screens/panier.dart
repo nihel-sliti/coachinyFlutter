@@ -5,7 +5,7 @@ import 'package:coachiny/models/ingredient.dart';
 class Panier extends StatefulWidget {
   final List<CartItem> cartItems;
 
-  Panier({Key? key, required this.cartItems}) : super(key: key);
+  const Panier({super.key, required this.cartItems});
 
   @override
   _PanierState createState() => _PanierState();
@@ -38,8 +38,8 @@ class _PanierState extends State<Panier> {
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        actions: [
-          const Padding(
+        actions: const [
+          Padding(
             padding: EdgeInsets.only(right: 16.0),
             child: CircleAvatar(
               backgroundImage: AssetImage(

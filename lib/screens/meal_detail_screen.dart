@@ -8,7 +8,7 @@ class MealDetailScreen extends StatelessWidget {
   static const IconData shopping_cart =
       IconData(0xe59c, fontFamily: 'MaterialIcons');
 
-  const MealDetailScreen({Key? key, required this.meal}) : super(key: key);
+  const MealDetailScreen({super.key, required this.meal});
 
   @override
   Widget build(BuildContext context) {

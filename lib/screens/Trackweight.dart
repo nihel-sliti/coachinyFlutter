@@ -5,16 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class TrackWeight extends StatelessWidget {
+  const TrackWeight({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => WeightProvider(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Weight Tracker'),
+          title: const Text('Weight Tracker'),
           actions: [
             IconButton(
-              icon: Icon(Icons.settings),
+              icon: const Icon(Icons.settings),
               onPressed: () {},
             ),
           ],
@@ -32,17 +34,17 @@ class TrackWeight extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Current',
                             style: TextStyle(fontSize: 18, color: Colors.grey),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
                                 '${weightProvider.currentWeight.toStringAsFixed(1)} kg',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 36, fontWeight: FontWeight.bold),
                               ),
                               Text(
@@ -58,12 +60,13 @@ class TrackWeight extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Text(
                             'Starting: ${weightProvider.startingWeight.toStringAsFixed(1)} kg | Goal: ${weightProvider.goalWeight.toStringAsFixed(1)} kg',
-                            style: TextStyle(fontSize: 14, color: Colors.grey),
+                            style: const TextStyle(
+                                fontSize: 14, color: Colors.grey),
                           ),
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange,
@@ -77,7 +80,7 @@ class TrackWeight extends StatelessWidget {
                                 builder: (context) => UpdateWeightScreen(),
                               );
                             },
-                            child: Text('Update'),
+                            child: const Text('Update'),
                           ),
                         ],
                       ),
@@ -91,12 +94,12 @@ class TrackWeight extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('History',
+                      const Text('History',
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold)),
                       TextButton(
                         onPressed: () {},
-                        child: Text('View All'),
+                        child: const Text('View All'),
                       ),
                     ],
                   ),
@@ -109,7 +112,7 @@ class TrackWeight extends StatelessWidget {
                       return ListTile(
                         title: Text(
                           '${entry['weight'].toStringAsFixed(1)} kg',
-                          style: TextStyle(fontSize: 18),
+                          style: const TextStyle(fontSize: 18),
                         ),
                         subtitle: Text(entry['date']),
                         trailing: Text(

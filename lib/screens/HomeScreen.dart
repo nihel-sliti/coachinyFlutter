@@ -4,16 +4,16 @@ import 'package:coachiny/screens/dashboard_screen.dart';
 import 'package:coachiny/screens/meal_detail_screen.dart';
 import 'package:coachiny/screens/meal_recommendations_screen.dart';
 import 'package:coachiny/screens/productScreen.dart';
+import 'package:coachiny/screens/profilescreen.dart';
 import 'package:coachiny/screens/statistic_screen.dart';
 import 'package:coachiny/widgets/progression_card.dart';
 import 'package:coachiny/widgets/statistics_card.dart';
 import 'package:flutter/material.dart';
 import 'package:coachiny/widgets/HorizontalItem.dart'; // Vérifiez que le fichier existe
 import 'package:coachiny/widgets/message_card.dart'; // Vérifiez que le fichier existe
-import 'package:coachiny/widgets/custom_bottom_nav_bar.dart'; // Ajoutez ce fichier
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -23,11 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
-    Center(child: Text('Home Screen Content')),
-    Center(child: Text('Location Screen Content')),
-    Center(child: Text('Messages Screen Content')),
-    Center(child: Text('Favorites Screen Content')),
-    Center(child: Text('Profile Screen Content')),
+    const Center(child: Text('Home Screen Content')),
+    const Center(child: Text('Location Screen Content')),
+    const Center(child: Text('Messages Screen Content')),
+    const Center(child: Text('Favorites Screen Content')),
+    const Center(child: Text('Profile Screen Content')),
   ];
 
   void _onItemTapped(int index) {
@@ -44,11 +44,23 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const MessageCard(
-              name: 'Nihel',
-              message: 'Good Morning',
-              imageUrl:
-                  'https://media.licdn.com/dms/image/v2/D4E03AQGZBkfAgubkSg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682949292176?e=1737590400&v=beta&t=B1yhm9wPd3A-aRIzfAnRrGO5i8lPbS_FQDHDTNOOEBI',
+            SizedBox(
+              height: 20,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ProfileScreen()),
+                );
+              },
+              child: const MessageCard(
+                name: 'Nihel',
+                message: 'Good Morning',
+                imageUrl:
+                    'https://media.licdn.com/dms/image/v2/D4E03AQGZBkfAgubkSg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682949292176?e=1737590400&v=beta&t=B1yhm9wPd3A-aRIzfAnRrGO5i8lPbS_FQDHDTNOOEBI',
+              ),
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -82,9 +94,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     imageUrl:
                         'https://www.nutrimove.fr/images/formation-produits-dietetiques-sportifs.jpg',
                     label: 'Product',
-                    destination: Productscreen(),
+                    destination: ProductScreen(),
                   ),
-                  HorizontalItem(
+                  const HorizontalItem(
                     imageUrl:
                         'https://www.mangezplus.com/wp-content/uploads/2020/02/wok-de-poulet-recette-healthy-et-rapide.jpg',
                     label: 'Recipe',
@@ -100,16 +112,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const ProgressionCard(
               data: [200, 400, 800, 600, 300, 900],
-              days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], // Add this line
+              days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
               period: 'Weekly',
             )
           ],
         ),
       ),
-      /*  bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-      ),*/
     );
   }
 }

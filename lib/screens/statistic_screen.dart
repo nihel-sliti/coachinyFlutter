@@ -2,74 +2,89 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class StatisticsScreen extends StatelessWidget {
-  const StatisticsScreen({Key? key}) : super(key: key);
+  const StatisticsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFEFF8FD),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        title: const Text('Statistiques'),
+        backgroundColor: Colors.teal,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () {
-            Navigator.pop(context); // Navigate back to the previous screen
-          },
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          "Statistics",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        actions: [
-          CircleAvatar(
-            backgroundImage: NetworkImage(
-              'https://media.licdn.com/dms/image/v2/D4E03AQGZBkfAgubkSg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682949292176?e=1737590400&v=beta&t=B1yhm9wPd3A-aRIzfAnRrGO5i8lPbS_FQDHDTNOOEBI',
-            ), // Replace with your image
-            radius: 20,
-          ),
-        ],
       ),
-      body: SingleChildScrollView(
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.teal, Colors.teal],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 16.0),
-            // Calorie Meter Section
-            _buildCalorieMeter(),
-            const SizedBox(height: 24.0),
-            // Diet Journey Section
-            _buildDietJourneyChart(),
+            Expanded(
+              child: SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: MediaQuery.of(context).size.height * 0.6,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(height: 16.0),
+                        _buildCalorieMeter(),
+                        const SizedBox(height: 24.0),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
+                ),
+              ),
+              padding: const EdgeInsets.all(16.0),
+              child: _buildDietJourneyChart(),
+            ),
           ],
         ),
       ),
     );
   }
 
-  // Calorie Meter Widget
   Widget _buildCalorieMeter() {
     return Column(
       children: [
         const Text(
-          "Your Calories Score is average",
-          style: TextStyle(fontSize: 16.0, color: Colors.grey),
+          "Votre score de calories est moyen",
+          style: TextStyle(fontSize: 16.0, color: Colors.white70),
         ),
         const SizedBox(height: 16.0),
         Stack(
           alignment: Alignment.center,
           children: [
-            // Gauge background
             SizedBox(
               width: 200,
               height: 200,
               child: CircularProgressIndicator(
-                value: 0.7, // Change this to dynamically update progress
+                value: 0.7,
                 strokeWidth: 12,
-                color: Colors.green,
-                backgroundColor: Colors.grey[300],
+                color: Colors.greenAccent,
+                backgroundColor: Colors.white24,
               ),
             ),
-            // Calorie Count
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
@@ -77,11 +92,14 @@ class StatisticsScreen extends StatelessWidget {
                 SizedBox(height: 8.0),
                 Text(
                   "1721 Kcal",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
                 Text(
-                  "of 2213 kcal",
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                  "sur 2213 kcal",
+                  style: TextStyle(fontSize: 16, color: Colors.white70),
                 ),
               ],
             ),
@@ -91,113 +109,108 @@ class StatisticsScreen extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildMacroStat("Protein", "78/80g"),
-            _buildMacroStat("Fats", "45/70g"),
-            _buildMacroStat("Carbs", "55/100g"),
+            _buildMacroStat(
+                "Protéines", "78/80g", Icons.emoji_food_beverage, Colors.green),
+            _buildMacroStat("Lipides", "45/70g", Icons.grass, Colors.blue),
+            _buildMacroStat("Glucides", "55/100g", Icons.cake, Colors.orange),
           ],
         ),
       ],
     );
   }
 
-  // Macro Stat Widget (e.g., Protein, Fats, Carbs)
-  Widget _buildMacroStat(String label, String value) {
+  Widget _buildMacroStat(
+      String label, String value, IconData icon, Color color) {
     return Column(
       children: [
+        Icon(icon, color: color, size: 28),
+        const SizedBox(height: 8.0),
         Text(
           label,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+              fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
         ),
         const SizedBox(height: 8.0),
         Text(
           value,
-          style: const TextStyle(fontSize: 14, color: Colors.grey),
+          style: const TextStyle(fontSize: 14, color: Colors.white70),
         ),
       ],
     );
   }
 
-  // Diet Journey Chart Widget
   Widget _buildDietJourneyChart() {
-    return Container(
-      padding: const EdgeInsets.all(16.0),
-      margin: const EdgeInsets.symmetric(horizontal: 16.0),
-      decoration: BoxDecoration(
-        color: const Color(0xFF40B491),
-        borderRadius: BorderRadius.circular(16.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            "Track your diet journey",
-            style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "Suivez votre parcours diététique",
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.green,
           ),
-          const SizedBox(height: 8.0),
-          const Text(
-            "Today Calorie: 1721",
-            style: TextStyle(fontSize: 14, color: Colors.white70),
-          ),
-          const SizedBox(height: 16.0),
-          SizedBox(
-            height: 200,
-            child: LineChart(
-              LineChartData(
-                gridData: FlGridData(show: false),
-                titlesData: FlTitlesData(
-                  bottomTitles: AxisTitles(
-                    sideTitles: SideTitles(
-                      showTitles: true,
-                      getTitlesWidget: (value, meta) {
-                        const days = ["S", "M", "T", "W", "T", "F", "S"];
-                        return Text(
-                          days[value.toInt() % days.length],
-                          style: const TextStyle(
-                              fontSize: 12, color: Colors.white),
-                        );
-                      },
-                    ),
-                  ),
-                  leftTitles: AxisTitles(
-                    sideTitles: SideTitles(
-                      showTitles: false,
-                    ),
-                  ),
-                  topTitles: AxisTitles(
-                    sideTitles: SideTitles(
-                      showTitles: false,
-                    ),
-                  ),
-                  rightTitles: AxisTitles(
-                    sideTitles: SideTitles(
-                      showTitles: false,
-                    ),
+        ),
+        const SizedBox(height: 8.0),
+        const Text(
+          "Calories aujourd'hui : 1721",
+          style: TextStyle(fontSize: 14, color: Colors.black87),
+        ),
+        const SizedBox(height: 16.0),
+        SizedBox(
+          height: 200,
+          child: LineChart(
+            LineChartData(
+              gridData: const FlGridData(show: false),
+              titlesData: FlTitlesData(
+                bottomTitles: AxisTitles(
+                  sideTitles: SideTitles(
+                    showTitles: true,
+                    getTitlesWidget: (value, meta) {
+                      const days = ["D", "L", "M", "M", "J", "V", "S"];
+                      return Text(
+                        days[value.toInt() % days.length],
+                        style:
+                            const TextStyle(fontSize: 12, color: Colors.black),
+                      );
+                    },
                   ),
                 ),
-                borderData: FlBorderData(show: false),
-                lineBarsData: [
-                  LineChartBarData(
-                    spots: [
-                      FlSpot(0, 1000),
-                      FlSpot(1, 1500),
-                      FlSpot(2, 2000),
-                      FlSpot(3, 1800),
-                      FlSpot(4, 2200),
-                      FlSpot(5, 1700),
-                      FlSpot(6, 2000),
-                    ],
-                    isCurved: true,
-                    color: Colors.white,
-                    barWidth: 4,
-                    belowBarData: BarAreaData(show: false),
-                  ),
-                ],
+                leftTitles: const AxisTitles(
+                  sideTitles: SideTitles(showTitles: false),
+                ),
+                topTitles: const AxisTitles(
+                  sideTitles: SideTitles(showTitles: false),
+                ),
+                rightTitles: const AxisTitles(
+                  sideTitles: SideTitles(showTitles: false),
+                ),
               ),
+              borderData: FlBorderData(show: false),
+              lineBarsData: [
+                LineChartBarData(
+                  spots: [
+                    const FlSpot(0, 1000),
+                    const FlSpot(1, 1500),
+                    const FlSpot(2, 2000),
+                    const FlSpot(3, 1800),
+                    const FlSpot(4, 2200),
+                    const FlSpot(5, 1700),
+                    const FlSpot(6, 2000),
+                  ],
+                  isCurved: true,
+                  color: Colors.green,
+                  barWidth: 4,
+                  belowBarData: BarAreaData(
+                    show: true,
+                    color: Colors.green.withOpacity(0.2),
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

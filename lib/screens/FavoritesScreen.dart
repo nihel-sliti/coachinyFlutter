@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:coachiny/models/meal.dart';
 
 class FavoritesScreen extends StatefulWidget {
+  const FavoritesScreen({super.key});
+
   @override
   _FavoritesScreenState createState() => _FavoritesScreenState();
 }

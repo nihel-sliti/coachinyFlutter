@@ -9,7 +9,7 @@ import 'dart:convert';
 
 class Recipedetailscreen extends StatefulWidget {
   final Meal meal;
-  const Recipedetailscreen({Key? key, required this.meal}) : super(key: key);
+  const Recipedetailscreen({super.key, required this.meal});
 
   @override
   _RecipedetailscreenState createState() => _RecipedetailscreenState();
@@ -35,7 +35,7 @@ class _RecipedetailscreenState extends State<Recipedetailscreen> {
       content: Text(isFavorite
           ? 'Recette ajoutée aux favoris!'
           : 'Recette retirée des favoris!'),
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       backgroundColor: isFavorite ? Colors.green : Colors.red,
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -68,16 +68,16 @@ class _RecipedetailscreenState extends State<Recipedetailscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEFF8FD), // Couleur de fond
+      backgroundColor: const Color(0xFFEFF8FD), // Couleur de fond
       appBar: AppBar(
         title: Text(meal.name ?? 'Détails du Repas'),
-        backgroundColor: Color(0xFF40B491), // Couleur principale
+        backgroundColor: const Color(0xFF40B491), // Couleur principale
         elevation: 4,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           // Bouton "Ajouter au panier"
           IconButton(
-            icon: Icon(Icons.add_shopping_cart, color: Colors.white),
+            icon: const Icon(Icons.add_shopping_cart, color: Colors.white),
             onPressed: _addToCart, // Ajouter le repas actuel au panier
           ),
         ],
@@ -168,7 +168,7 @@ class _RecipedetailscreenState extends State<Recipedetailscreen> {
       children: [
         Text(
           meal.name ?? 'Nom de la recette',
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 22, // Taille plus petite pour le nom de la recette
             fontWeight: FontWeight.bold,
           ),
@@ -199,13 +199,15 @@ class _RecipedetailscreenState extends State<Recipedetailscreen> {
         Row(
           children: [
             Icon(icon,
-                color: Color(0xFF40B491)), // Couleur principale pour les icônes
-            SizedBox(width: 8),
+                color: const Color(
+                    0xFF40B491)), // Couleur principale pour les icônes
+            const SizedBox(width: 8),
             Text(label,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           ],
         ),
-        Text(value, style: TextStyle(fontSize: 16)),
+        Text(value, style: const TextStyle(fontSize: 16)),
       ],
     );
   }
@@ -215,7 +217,7 @@ class _RecipedetailscreenState extends State<Recipedetailscreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Ingrédients:",
+        const Text("Ingrédients:",
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
         const SizedBox(height: 8),
         // Vérifier si la liste des ingrédients n'est pas vide
@@ -226,9 +228,9 @@ class _RecipedetailscreenState extends State<Recipedetailscreen> {
               subtitle: Text(
                   'Calories: ${ingredient.calories} kcal, Poids: ${ingredient.weight}g, Prix: ${ingredient.price} TND'),
             );
-          }).toList(),
+          }),
         if (meal.ingredients == null || meal.ingredients!.isEmpty)
-          Text('Ingrédients non disponibles'),
+          const Text('Ingrédients non disponibles'),
       ],
     );
   }
@@ -238,22 +240,23 @@ class _RecipedetailscreenState extends State<Recipedetailscreen> {
     // Obtenir la largeur de l'écran
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       width:
           screenWidth * 0.9, // La carte occupera 90% de la largeur de l'écran
       child: Card(
         elevation: 4,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        margin: EdgeInsets.symmetric(vertical: 8.0),
+        margin: const EdgeInsets.symmetric(vertical: 8.0),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(title,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              SizedBox(height: 8),
-              Text(content, style: TextStyle(fontSize: 16)),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              Text(content, style: const TextStyle(fontSize: 16)),
             ],
           ),
         ),

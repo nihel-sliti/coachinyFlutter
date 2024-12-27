@@ -1,15 +1,24 @@
 // lib/main.dart
 import 'package:coachiny/providers/FavoriteProvider.dart';
 import 'package:coachiny/providers/workout_provider.dart';
+import 'package:coachiny/screens/auth/login.dart';
+import 'package:coachiny/screens/splash_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
 import 'providers/dashboard_provider.dart';
 import 'providers/meal_provider.dart';
 import 'providers/WeightProvider.dart';
 import 'providers/MeasurementsProvider.dart';
 import 'screens/HomeScreen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  FirebaseAuth.instance.setLanguageCode('fr');
+
   runApp(
     MultiProvider(
       providers: [
@@ -36,7 +45,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }

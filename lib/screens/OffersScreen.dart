@@ -1,5 +1,5 @@
-// lib/screens/OffersScreen.dart
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 import '../models/offer.dart';
 
 class OffersScreen extends StatelessWidget {
@@ -68,14 +68,17 @@ class OffersScreen extends StatelessWidget {
     ),
   ];
 
+  OffersScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Les Offres Disponibles'),
+        title: const Text('Les Offres Disponibles'),
+        backgroundColor: Colors.teal,
       ),
       body: ListView.builder(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         itemCount: offers.length,
         itemBuilder: (context, index) {
           final offer = offers[index];
@@ -89,13 +92,26 @@ class OffersScreen extends StatelessWidget {
 class OfferCard extends StatelessWidget {
   final Offer offer;
 
-  const OfferCard({Key? key, required this.offer}) : super(key: key);
+  const OfferCard({super.key, required this.offer});
+
+  Future<void> _saveOfferToDatabase(Offer offer) async {
+    final DatabaseReference databaseRef =
+        FirebaseDatabase.instance.ref('nihel/offerAchter/${offer.title}');
+
+    await databaseRef.set({
+      'title': offer.title,
+      'features': offer.features,
+      'price': offer.price,
+      'duration': offer.duration,
+      'timestamp': DateTime.now().toIso8601String(),
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.only(bottom: 16.0),
-      elevation: 4,
+      margin: const EdgeInsets.only(bottom: 16.0),
+      elevation: 6,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -105,42 +121,42 @@ class OfferCard extends StatelessWidget {
             // Titre de l'offre
             Text(
               offer.title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: Colors.orange,
+                color: Colors.teal,
               ),
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             // Liste des fonctionnalités
             ...offer.features.map((feature) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.check_circle,
                         color: Colors.green,
                         size: 20,
                       ),
-                      SizedBox(width: 8.0),
+                      const SizedBox(width: 8.0),
                       Expanded(
                         child: Text(
                           feature,
-                          style: TextStyle(fontSize: 16),
+                          style: const TextStyle(fontSize: 16),
                         ),
                       ),
                     ],
                   ),
                 )),
-            SizedBox(height: 12.0),
+            const SizedBox(height: 12.0),
             // Prix et durée
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'Prix : ${offer.price}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.blueGrey,
@@ -155,13 +171,11 @@ class OfferCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 12.0),
+            const SizedBox(height: 12.0),
             // Bouton d'action
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  // Action à définir : achat, détails, etc.
-                  // Par exemple, afficher un message de confirmation
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
@@ -170,15 +184,14 @@ class OfferCard extends StatelessWidget {
                           'Confirmez-vous l\'achat de cette offre pour ${offer.price} ?'),
                       actions: [
                         TextButton(
-                          child: Text('Annuler'),
+                          child: const Text('Annuler'),
                           onPressed: () => Navigator.of(context).pop(),
                         ),
                         ElevatedButton(
-                          child: Text('Confirmer'),
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
-                          onPressed: () {
-                            // Logique d'achat à implémenter
+                              backgroundColor: Colors.teal),
+                          onPressed: () async {
+                            await _saveOfferToDatabase(offer);
                             Navigator.of(context).pop();
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
@@ -187,20 +200,21 @@ class OfferCard extends StatelessWidget {
                               ),
                             );
                           },
+                          child: const Text('Confirmer'),
                         ),
                       ],
                     ),
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange,
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 32.0, vertical: 12.0),
+                  backgroundColor: Colors.teal,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 32.0, vertical: 12.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Acheter',
                   style: TextStyle(fontSize: 16),
                 ),

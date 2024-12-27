@@ -1,9 +1,11 @@
-// lib/screens/DietCalculatorScreen.dart
 import 'package:coachiny/models/user.dart';
 import 'package:coachiny/screens/FoodTrackingScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class DietCalculatorScreen extends StatefulWidget {
+  const DietCalculatorScreen({super.key});
+
   @override
   _DietCalculatorScreenState createState() => _DietCalculatorScreenState();
 }
@@ -24,6 +26,35 @@ class _DietCalculatorScreenState extends State<DietCalculatorScreen> {
   double? _protein;
   double? _carbs;
   double? _fat;
+
+  // Référence Firebase Realtime Database
+  final DatabaseReference _database = FirebaseDatabase.instance.ref();
+
+  // Méthode pour sauvegarder les résultats dans un chemin fixe
+  Future<void> _saveResultsToDatabase(
+      double calories, double protein, double carbs, double fat) async {
+    try {
+      // Chemin fixe dans la base de données
+      final DatabaseReference resultRef = _database.child('nihel/diet-result');
+
+      await resultRef.set({
+        'calories': calories,
+        'protein': protein,
+        'carbs': carbs,
+        'fat': fat,
+        'timestamp': DateTime.now().toIso8601String(),
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('Résultats sauvegardés avec succès dans Firebase!')),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Erreur lors de la sauvegarde : $e')),
+      );
+    }
+  }
 
   // Méthode pour calculer les besoins caloriques et en macronutriments
   void _calculateNeeds(User userInfo) {
@@ -85,18 +116,32 @@ class _DietCalculatorScreenState extends State<DietCalculatorScreen> {
       _carbs = carbs;
       _fat = fat;
     });
+
+    // Sauvegarder les résultats dans Realtime Database
+    _saveResultsToDatabase(totalCalories, protein, carbs, fat);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Calculateur Diététique'),
+          title: const Text('Calculateur Diététique'),
+          backgroundColor: Colors.teal,
         ),
         body: SingleChildScrollView(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
+              const SizedBox(height: 10),
+              const Text(
+                'Vous êtes capable d"atteindre vos objectifs santé!',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.teal,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20),
               // Formulaire pour les entrées utilisateur
               Form(
                 key: _formKey,
@@ -104,7 +149,14 @@ class _DietCalculatorScreenState extends State<DietCalculatorScreen> {
                   children: [
                     // Âge
                     TextFormField(
-                      decoration: InputDecoration(labelText: 'Âge (ans)'),
+                      decoration: InputDecoration(
+                        labelText: 'Âge (ans)',
+                        labelStyle: const TextStyle(color: Colors.teal),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.teal),
+                        ),
+                        border: const OutlineInputBorder(),
+                      ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -119,10 +171,17 @@ class _DietCalculatorScreenState extends State<DietCalculatorScreen> {
                         _age = int.parse(value!);
                       },
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     // Poids
                     TextFormField(
-                      decoration: InputDecoration(labelText: 'Poids (kg)'),
+                      decoration: InputDecoration(
+                        labelText: 'Poids (kg)',
+                        labelStyle: const TextStyle(color: Colors.teal),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.teal),
+                        ),
+                        border: const OutlineInputBorder(),
+                      ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -137,10 +196,17 @@ class _DietCalculatorScreenState extends State<DietCalculatorScreen> {
                         _weight = double.parse(value!);
                       },
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     // Taille
                     TextFormField(
-                      decoration: InputDecoration(labelText: 'Taille (cm)'),
+                      decoration: InputDecoration(
+                        labelText: 'Taille (cm)',
+                        labelStyle: const TextStyle(color: Colors.teal),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.teal),
+                        ),
+                        border: const OutlineInputBorder(),
+                      ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -155,19 +221,26 @@ class _DietCalculatorScreenState extends State<DietCalculatorScreen> {
                         _height = double.parse(value!);
                       },
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     // Genre
                     DropdownButtonFormField<String>(
-                      decoration: InputDecoration(labelText: 'Genre'),
+                      decoration: InputDecoration(
+                        labelText: 'Genre',
+                        labelStyle: const TextStyle(color: Colors.teal),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.teal),
+                        ),
+                        border: const OutlineInputBorder(),
+                      ),
                       value: _gender,
-                      items: [
+                      items: const [
                         DropdownMenuItem(
-                          child: Text('Homme'),
                           value: 'male',
+                          child: Text('Homme'),
                         ),
                         DropdownMenuItem(
-                          child: Text('Femme'),
                           value: 'female',
+                          child: Text('Femme'),
                         ),
                       ],
                       onChanged: (value) {
@@ -176,32 +249,38 @@ class _DietCalculatorScreenState extends State<DietCalculatorScreen> {
                         });
                       },
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     // Niveau d'activité
                     DropdownButtonFormField<String>(
-                      decoration:
-                          InputDecoration(labelText: 'Niveau d\'activité'),
+                      decoration: InputDecoration(
+                        labelText: 'Niveau d\'activité',
+                        labelStyle: const TextStyle(color: Colors.teal),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.teal),
+                        ),
+                        border: const OutlineInputBorder(),
+                      ),
                       value: _activityLevel,
-                      items: [
+                      items: const [
                         DropdownMenuItem(
-                          child: Text('Sédentaire'),
                           value: 'sedentary',
+                          child: Text('Sédentaire'),
                         ),
                         DropdownMenuItem(
-                          child: Text('Léger'),
                           value: 'light',
+                          child: Text('Léger'),
                         ),
                         DropdownMenuItem(
-                          child: Text('Modéré'),
                           value: 'moderate',
+                          child: Text('Modéré'),
                         ),
                         DropdownMenuItem(
-                          child: Text('Actif'),
                           value: 'active',
+                          child: Text('Actif'),
                         ),
                         DropdownMenuItem(
-                          child: Text('Très Actif'),
                           value: 'very_active',
+                          child: Text('Très Actif'),
                         ),
                       ],
                       onChanged: (value) {
@@ -210,19 +289,26 @@ class _DietCalculatorScreenState extends State<DietCalculatorScreen> {
                         });
                       },
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     // Objectif
                     DropdownButtonFormField<String>(
-                      decoration: InputDecoration(labelText: 'Objectif'),
+                      decoration: InputDecoration(
+                        labelText: 'Objectif',
+                        labelStyle: const TextStyle(color: Colors.teal),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.teal),
+                        ),
+                        border: const OutlineInputBorder(),
+                      ),
                       value: _goal,
-                      items: [
+                      items: const [
                         DropdownMenuItem(
-                          child: Text('Perdre du poids'),
                           value: 'lose_weight',
+                          child: Text('Perdre du poids'),
                         ),
                         DropdownMenuItem(
-                          child: Text('Gagner du poids'),
                           value: 'gain_weight',
+                          child: Text('Gagner du poids'),
                         ),
                       ],
                       onChanged: (value) {
@@ -231,9 +317,12 @@ class _DietCalculatorScreenState extends State<DietCalculatorScreen> {
                         });
                       },
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     // Bouton de calcul
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.teal,
+                      ),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState!.save();
@@ -250,43 +339,28 @@ class _DietCalculatorScreenState extends State<DietCalculatorScreen> {
                           _calculateNeeds(userInfo);
                         }
                       },
-                      child: Text('Calculer'),
+                      child: const Text('Calculer'),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Affichage des résultats
               if (_calories != null)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Vos besoins quotidiens :',
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text('Calories : ${_calories!.toStringAsFixed(0)} kcal'),
                     Text('Protéines : ${_protein!.toStringAsFixed(1)} g'),
                     Text('Glucides : ${_carbs!.toStringAsFixed(1)} g'),
                     Text('Lipides : ${_fat!.toStringAsFixed(1)} g'),
-                    SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => FoodTrackingScreen(
-                                    dailyCalories: _calories!,
-                                    dailyProtein: _protein!,
-                                    dailyCarbs: _carbs!,
-                                    dailyFat: _fat!,
-                                  )),
-                        );
-                      },
-                      child: Text('Suivre mes aliments'),
-                    ),
+                    const SizedBox(height: 20),
                   ],
                 ),
             ],
